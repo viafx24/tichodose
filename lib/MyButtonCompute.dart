@@ -19,7 +19,7 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     int? poids = context.watch<MyVariableToListen>().poids;
     String? equation = MyMapMedocs[textDropdown1]!.map[textDropdown2];
     equation = equation?.replaceAll("poids", poids.toString());
-    String volume = equation!.interpret().toStringAsFixed(3);
+    String volume = equation!.interpret().toStringAsFixed(2);
     return SizedBox(
       width: 300,
       child: ElevatedButton(
