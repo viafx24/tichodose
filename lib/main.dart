@@ -60,13 +60,13 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                         textDropdown2 != null
                             ? const MyDropDownMenu3()
                             : Container(),
-                        SizedBox(height: 20),
+                        SizedBox(height: widgetSpace),
                         textDropdown3 != null ? const MyInputField() : Container(),
-                        SizedBox(height: 20),
+                        SizedBox(height: widgetSpace),
                         poids != null ? const MyButtonCompute() : Container(),
                         //SizedBox(height: 10),
                         volume != null ? const MyResult() : Container(),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 1),
                         const MyResetButton()
                       ],
                     ))))));

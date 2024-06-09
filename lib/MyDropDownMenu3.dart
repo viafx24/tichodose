@@ -16,6 +16,9 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
   @override
   Widget build(BuildContext context) {
     var textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
+    List mapMedocsKeys = myMapMedocs[textDropdown2]!.map.keys.toList();
+    mapMedocsKeys.sort();
+
     return DropdownMenu(
       initialSelection: null,
       // controller: dropDownMenu3Controller,
@@ -38,10 +41,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
       },
 
       dropdownMenuEntries:
-          myMapMedocs[textDropdown2]!
-              .map
-              .keys
-              .map<DropdownMenuEntry>((value) {
+          mapMedocsKeys.map<DropdownMenuEntry>((value) {
         return DropdownMenuEntry(
           value: value,
           label: value,

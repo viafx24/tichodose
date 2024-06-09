@@ -26,7 +26,7 @@ class _MyResetButtonState extends State<MyResetButton> {
             Phoenix.rebirth(context);
           },
          
-          child: const Text('reset')),
+          child: const Text('Reset / nouveau calcul')),
     );
         
   }

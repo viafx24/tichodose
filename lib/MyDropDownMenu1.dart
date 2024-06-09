@@ -16,12 +16,12 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
 
   @override
   Widget build(BuildContext context) {
-    
+    categorieNames.sort();
     return DropdownMenu(
       initialSelection: null,
       // controller: dropDownMenu1Controller,
       // enableFilter: true,
-      requestFocusOnTap: true,
+      // requestFocusOnTap: true,
       width: width,
       label: const Text("Choisir un type de médicament"),
       onSelected: (newValue) {

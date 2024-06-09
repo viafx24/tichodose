@@ -25,6 +25,8 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
         .map((MyMedicament) => MyMedicament.nameMedoc)
         .toList();
 
+    filteredMedicamentString.sort();
+
     return DropdownMenu(
       initialSelection: null,
       // controller: dropDownMenu2Controller,
