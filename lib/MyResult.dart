@@ -13,8 +13,8 @@ class MyResult extends StatefulWidget {
 class _MyResultState extends State<MyResult> {
   @override
   Widget build(BuildContext context) {
-    String? textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
+    String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
     int? poids = context.watch<MyVariableToListen>().poids;
     String? equation = context.watch<MyVariableToListen>().equation;
     String? volume = context.watch<MyVariableToListen>().volume;
@@ -35,11 +35,11 @@ class _MyResultState extends State<MyResult> {
               children: <TextSpan>[
                 const TextSpan(text: 'Le volume de '),
                 TextSpan(
-                    text: '$textDropdown1',
+                    text: '$textDropdown2',
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 const TextSpan(text: ' à préléver pour un/une '),
                 TextSpan(
-                    text: '$textDropdown2',
+                    text: '$textDropdown3',
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 const TextSpan(text: ' pesant '),
                 TextSpan(

@@ -20,6 +20,7 @@ class _MyResetButtonState extends State<MyResetButton> {
           onPressed: () {
             context.read<MyVariableToListen>().settextDropdown1(null);
             context.read<MyVariableToListen>().settextDropdown2(null);
+            context.read<MyVariableToListen>().settextDropdown3(null);
             context.read<MyVariableToListen>().setPoids(null);
             context.read<MyVariableToListen>().setVolume(null);
             Phoenix.rebirth(context);

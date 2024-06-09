@@ -12,27 +12,27 @@ class MyDropDownMenu1 extends StatefulWidget {
 }
 
 class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
-  final TextEditingController colorController = TextEditingController();
+  final TextEditingController dropDownMenu1Controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     
     return DropdownMenu(
       initialSelection: null,
-      controller: colorController,
-      enableFilter: true,
+      // controller: dropDownMenu1Controller,
+      // enableFilter: true,
       requestFocusOnTap: true,
       width: width,
-      label: const Text("Choisir un médicament"),
+      label: const Text("Choisir un type de médicament"),
       onSelected: (newValue) {
-        
         context.read<MyVariableToListen>().settextDropdown1(newValue);
         context.read<MyVariableToListen>().settextDropdown2(null);
+        context.read<MyVariableToListen>().settextDropdown3(null);
         context.read<MyVariableToListen>().setPoids(null);
         context.read<MyVariableToListen>().setVolume(null);
       },
 
-      dropdownMenuEntries: MedocNames.map<DropdownMenuEntry>((value) {
+      dropdownMenuEntries: categorieNames.map<DropdownMenuEntry>((value) {
         return DropdownMenuEntry(
           value: value,
           label: value,

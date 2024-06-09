@@ -11,11 +11,17 @@ class MyInputField extends StatefulWidget {
 }
 
 class MyInputFieldState extends State<MyInputField> {
+  // final TextEditingController inputTextController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
+    TextEditingController? inputTextController = context.watch<MyVariableToListen>().inputTextController;
+
     return SizedBox(
       width: width,
       child: TextField(
+        controller:inputTextController,
         onChanged: (poidsValue) {
           context.read<MyVariableToListen>().setVolume(null);
           poidsValue.characters.isNotEmpty ?

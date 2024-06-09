@@ -14,10 +14,10 @@ class MyButtonCompute extends StatefulWidget {
 class _MyButtonComputeState extends State<MyButtonCompute> {
   @override
   Widget build(BuildContext context) {
-    String? textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
+    String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
     int? poids = context.watch<MyVariableToListen>().poids;
-    String? equation = MyMapMedocs[textDropdown1]!.map[textDropdown2];
+    String? equation = myMapMedocs[textDropdown2]!.map[textDropdown3];
     equation = equation?.replaceAll("poids", poids.toString());
     String volume = equation!.interpret().toStringAsFixed(2);
     return SizedBox(

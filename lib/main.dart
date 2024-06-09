@@ -5,6 +5,7 @@ import 'MyVariableToListen.dart';
 import 'MyButtonCompute.dart';
 import 'MyDropDownMenu1.dart';
 import 'MyDropDownMenu2.dart';
+import 'MyDropDownMenu3.dart';
 import 'MyInputField.dart';
 import 'MyResetButton.dart';
 import 'MyResult.dart';
@@ -33,6 +34,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
   Widget build(BuildContext context) {
     String? textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
+    String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
     int? poids = context.watch<MyVariableToListen>().poids;
     String? volume = context.watch<MyVariableToListen>().volume;
 
@@ -55,12 +57,16 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                             ? const MyDropDownMenu2()
                             : Container(),
                         SizedBox(height: widgetSpace),
-                        textDropdown2 != null ? const MyInputField() : Container(),
-                        SizedBox(height: widgetSpace),
+                        textDropdown2 != null
+                            ? const MyDropDownMenu3()
+                            : Container(),
+                        SizedBox(height: 20),
+                        textDropdown3 != null ? const MyInputField() : Container(),
+                        SizedBox(height: 20),
                         poids != null ? const MyButtonCompute() : Container(),
-                        SizedBox(height: widgetSpace),
+                        //SizedBox(height: 10),
                         volume != null ? const MyResult() : Container(),
-                        SizedBox(height: widgetSpace),
+                        SizedBox(height: 10),
                         const MyResetButton()
                       ],
                     ))))));

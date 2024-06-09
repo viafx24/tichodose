@@ -11,31 +11,35 @@ class MyDropDownMenu2 extends StatefulWidget {
 }
 
 class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
-  final TextEditingController iconController = TextEditingController();
+  final TextEditingController dropDownMenu2Controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     var textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
+
+    final List<MyMedicament> filteredMedicament = mesMedocs
+        .where((MyMedicament) => MyMedicament.categorie == textDropdown1)
+        .toList();
+
+    final List<String> filteredMedicamentString = filteredMedicament
+        .map((MyMedicament) => MyMedicament.nameMedoc)
+        .toList();
+
     return DropdownMenu(
       initialSelection: null,
-      controller: iconController,
-      enableFilter: true,
-      // requestFocusOnTap is enabled/disabled by platforms when it is null.
-      // On mobile platforms, this is false by default. Setting this to true will
-      // trigger focus request on the text field and virtual keyboard will appear
-      // afterward. On desktop platforms however, this defaults to true.
+      // controller: dropDownMenu2Controller,
+      // enableFilter: true,
       requestFocusOnTap: true,
       width: width,
-      label: const Text("Choisir un animal/dosage"),
+      label: const Text("Choisir un médicament"),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown2(newValue);
+        context.read<MyVariableToListen>().settextDropdown3(null);
+        context.read<MyVariableToListen>().setPoids(null);
+        context.read<MyVariableToListen>().setVolume(null);
       },
-
       dropdownMenuEntries:
-          MyMapMedocs[textDropdown1]!
-              .map
-              .keys
-              .map<DropdownMenuEntry>((value) {
+          filteredMedicamentString.map<DropdownMenuEntry>((value) {
         return DropdownMenuEntry(
           value: value,
           label: value,
