@@ -24,10 +24,9 @@ MyMedicament melox = MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", 
   'Lapin dosage min (0.3mg/kg)': 'poids*0.3/1000/1.5',
   'Lapin dosage max (1mg/kg)': 'poids*1/1000/1.5',
   'Rongeur (0.5mg/kg)': 'poids*0.5/1000/1.5',
-  // 'Chauve-Souris(0.002mg/kg)': 'poids*0.002/1.5',
+  'Chauve-Souris(0.002mg/g)': 'poids*0.002/1.5',
   'Renard demi dose (0.1mg/kg)': 'poids*0.1/1000/1.5',
   'Renard pleine dose (0.2mg/kg)': 'poids*0.2/1000/1.5',
-  
   'Chevreuil (0.5mg/kg)': 'poids*0.5/1000/1.5',
 });
 
@@ -41,7 +40,7 @@ MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire", {
   'Rongeur/Lapin dosage max (2mg/kg)': 'poids*2/1000/2',
   'Chevreuil (3ml/100kg)': 'poids*3/100/1000',
   'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10/1000',
-  // 'Chauve-Souris(0.003mg/g)': 'poids*0.003/2',
+  'Chauve-Souris(0.003mg/g)': 'poids*0.003/2',
 });
 
 MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire", {
@@ -63,7 +62,7 @@ MyMedicament augmentin = MyMedicament("Augmentin", "Antibiotique", {
   'Oiseau (1ml/kg)': 'poids/1000',
   'Hérisson (40 mg/kg)': 'poids*40/1000/112.5',
   'Petit carnivore (10 mg/kg)': 'poids*10/1000/112.5',
-  // 'Chauve-Souris (0,005 mg/g)': 'poids*0.005/112.5',
+  'Chauve-Souris (0,005 mg/g)': 'poids*0.005/112.5',
 });
 
 MyMedicament zodon = MyMedicament("Zodon liquide", "Antibiotique", {
@@ -115,7 +114,7 @@ MyMedicament panacur = MyMedicament("Panacur", "Antiparasitaire", {
   'Oiseau (20mg/kg)': 'poids/1250',
   'Hérisson (100mg/kg)': 'poids*100/1000/25',
   'Ecureuil/Lapin (20mg/kg)': 'poids*20/1000/25',
-  // 'Chauve-Souris (0.005mg/g)': 'poids*0.005/25',
+  'Chauve-Souris (0.005mg/g)': 'poids*0.005/25',
 });
 
 MyMedicament virbamec = MyMedicament("Virbamec", "Antiparasitaire", {

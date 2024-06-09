@@ -66,7 +66,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                         poids != null ? const MyButtonCompute() : Container(),
                         //SizedBox(height: 10),
                         volume != null ? const MyResult() : Container(),
-                        const SizedBox(height: 1),
+                        volume != null ? const SizedBox(height: 1):const SizedBox(height: 20),
                         const MyResetButton()
                       ],
                     ))))));
