@@ -93,7 +93,7 @@ MyMedicament septotryl = MyMedicament("Septotryl", "Antibiotique", {
 MyMedicament oxytetracycline = MyMedicament("Oxytetracycline", "Antibiotique", {
   'Oiseau (1ml/kg)': 'poids/1000',
   'Hérisson (50 mg/kg)': 'poids*50/1000/50',
-  'Petit carnivore  dose min (5mg/kg)': 'poids*5/1000/50',
+  'Petit carnivore dose min (5mg/kg)': 'poids*5/1000/50',
   'Petit carnivore dose max (10mg/kg)': 'poids*10/1000/50',
   'Renard (10mg/kg)': 'poids*10/1000/50',
   'Blaireau (5mg/kg)': 'poids*5/1000/50',
