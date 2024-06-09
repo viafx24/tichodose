@@ -21,10 +21,10 @@ MyMedicament melox = MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", 
   'Gros rapace > 1500gr (0.5mg/kg)': 'poids/1500/2',
   'Cygne (0.2mg/ml)': 'poids/1500/5',
   'Hérisson (0.2mg/kg)': 'poids*0.2/1000/1.5',
-  'Lapin dosage min (0.3mg/kg)': 'poids*0.3/1000/1.5',
-  'Lapin dosage max (1mg/kg)': 'poids*1/1000/1.5',
+  'Lapin dose min (0.3mg/kg)': 'poids*0.3/1000/1.5',
+  'Lapin dose max (1mg/kg)': 'poids*1/1000/1.5',
   'Rongeur (0.5mg/kg)': 'poids*0.5/1000/1.5',
-  'Chauve-Souris(0.002mg/g)': 'poids*0.002/1.5',
+  'Chauve-Souris (0.002mg/g)': 'poids*0.002/1.5',
   'Renard demi dose (0.1mg/kg)': 'poids*0.1/1000/1.5',
   'Renard pleine dose (0.2mg/kg)': 'poids*0.2/1000/1.5',
   'Chevreuil (0.5mg/kg)': 'poids*0.5/1000/1.5',
@@ -36,11 +36,11 @@ MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire", {
   'Gros rapace Neuro++ (4mg/kg)': 'poids/500',
   'Hérisson pleine dose (4mg/kg)': 'poids*4/1000/2',
   'Hérisson demi dose (2mg/kg)': 'poids*2/1000/2',
-  'Rongeur/Lapin dosage min (0.5mg/kg)': 'poids*0.5/1000/2',
-  'Rongeur/Lapin dosage max (2mg/kg)': 'poids*2/1000/2',
+  'Rongeur/Lapin dose min (0.5mg/kg)': 'poids*0.5/1000/2',
+  'Rongeur/Lapin dose max (2mg/kg)': 'poids*2/1000/2',
   'Chevreuil (3ml/100kg)': 'poids*3/100/1000',
   'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10/1000',
-  'Chauve-Souris(0.003mg/g)': 'poids*0.003/2',
+  'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
 });
 
 MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire", {
@@ -50,8 +50,8 @@ MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire", {
 MyMedicament meloxidolor =
     MyMedicament("Meloxidolor (SC)", "Anti-inflammatoire", {
   'Hérisson (0.2mg/kg)': 'poids*0.2/1000/5',
-  'Lapin dosage min (0.3mg/kg)': 'poids*0.3/1000/5',
-  'Lapin dosage max (1mg/kg)': 'poids*1/1000/5',
+  'Lapin dose min (0.3mg/kg)': 'poids*0.3/1000/5',
+  'Lapin dose max (1mg/kg)': 'poids*1/1000/5',
   'Rongeur (0.5mg/kg)': 'poids*0.5/1000/5',
   'Renard pleine dose (0.2mg/kg)': 'poids*0.2/1000/5',
   'Renard demi dose (0.1mg/kg)': 'poids*0.1/1000/5',
@@ -76,8 +76,8 @@ MyMedicament bactrim = MyMedicament("Bactrim", "Antibiotique", {
 MyMedicament adjusol = MyMedicament("Adjusol", "Antibiotique", {
   'Oiseau (0.3ml/kg)': 'poids*0.3/1000',
   'Hérisson (30mg/kg)': 'poids*30/1000/100',
-  'Ecureuil/Rongeur dosage min (15mg/kg)': 'poids*15/1000/100',
-  'Ecureuil/Rongeur dosage max (30mg/kg)': 'poids*30/1000/100',
+  'Ecureuil/Rongeur dose min (15mg/kg)': 'poids*15/1000/100',
+  'Ecureuil/Rongeur dose max (30mg/kg)': 'poids*30/1000/100',
 });
 
 MyMedicament zytromax = MyMedicament("Zytromax", "Antibiotique", {
@@ -86,15 +86,15 @@ MyMedicament zytromax = MyMedicament("Zytromax", "Antibiotique", {
 
 MyMedicament septotryl = MyMedicament("Septotryl", "Antibiotique", {
   'Hérisson (30mg/kg)': 'poids*30/1000/240',
-  'Rongeur dosage min (15mg/kg)': 'poids*15/1000/240',
-  'Rongeur dosage max (30mg/kg)': 'poids*30/1000/240',
+  'Rongeur dose min (15mg/kg)': 'poids*15/1000/240',
+  'Rongeur dose max (30mg/kg)': 'poids*30/1000/240',
 });
 
 MyMedicament oxytetracycline = MyMedicament("Oxytetracycline", "Antibiotique", {
   'Oiseau (1ml/kg)': 'poids/1000',
   'Hérisson (50 mg/kg)': 'poids*50/1000/50',
-  'Petit carnivore dosage min (5mg/kg)': 'poids*5/1000/50',
-  'Petit carnivore dosage max (10mg/kg)': 'poids*10/1000/50',
+  'Petit carnivore  dose min (5mg/kg)': 'poids*5/1000/50',
+  'Petit carnivore dose max (10mg/kg)': 'poids*10/1000/50',
   'Renard (10mg/kg)': 'poids*10/1000/50',
   'Blaireau (5mg/kg)': 'poids*5/1000/50',
   'Rongeur (30mg/kg)': 'poids*30/1000/50',
@@ -103,7 +103,7 @@ MyMedicament oxytetracycline = MyMedicament("Oxytetracycline", "Antibiotique", {
 });
 
 MyMedicament shotapen = MyMedicament("Shotapen", "Antibiotique", {
-  'gros Mammifère + carnivore (0.1ml/kg)': 'poids*0.1/1000',
+  'Gros mammifère/carnivore (0.1ml/kg)': 'poids*0.1/1000',
 });
 
 MyMedicament clavobay = MyMedicament("Clavobay", "Antibiotique", {
@@ -122,9 +122,9 @@ MyMedicament virbamec = MyMedicament("Virbamec", "Antiparasitaire", {
 });
 
 MyMedicament flagyl = MyMedicament("Flagyl", "Antiparasitaire", {
-  'Oiseau hors passereaux (20mg/kg)': 'poids/1250',
+  'Oiseau hors passereau (20mg/kg)': 'poids/1250',
   'Hérisson (40mg/kg)': 'poids*40*5/1000/125',
-  'Ecureuil (20mg/kg)': 'poids*20/1000/125',
+  'Ecureuil (20mg/kg)': 'poids*20*5/1000/125',
 });
 
 MyMedicament alazol = MyMedicament("Alazol", "Antiparasitaire", {
@@ -147,8 +147,8 @@ MyMedicament nemisole = MyMedicament("Nemisole", "Antiparasitaire", {
 
 MyMedicament emeprid = MyMedicament("Emeprid ", "Divers", {
   'Oiseau (0.1ml/kg)': 'poids/10000',
-  'Mammifère dosage min (0.2mg/kg)': 'poids*0.2/1000',
-  'Mammifère dosage max (1mg/kg)': 'poids*1/1000',
+  'Mammifère dose min (0.2mg/kg)': 'poids*0.2/1000',
+  'Mammifère dose max (1mg/kg)': 'poids*1/1000',
 });
 
 MyMedicament intrafungol = MyMedicament("Intrafungol", "Divers", {
