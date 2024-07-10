@@ -37,7 +37,11 @@ class MyInputFieldState extends State<MyInputField> {
             }),
         textAlign: TextAlign.center,
         decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelStyle: TextStyle(fontSize: 14),//hintText: 'Entrer le poids en GRAMME',
             labelText: "Entrer le poids de l'animal en GRAMME"),
+            
+           
         keyboardType: TextInputType.number,
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly
