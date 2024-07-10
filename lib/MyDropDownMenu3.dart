@@ -30,6 +30,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
       requestFocusOnTap: true,
       width: width,
       label: const Text("Choisir un animal/dosage"),
+      textStyle: const TextStyle(color:Colors.red),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown3(newValue);
         context.read<MyVariableToListen>().setPoids(null);
@@ -45,8 +46,10 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
         return DropdownMenuEntry(
           value: value,
           label: value,
-          //style: MenuItemButton.styleFrom(
+          style: MenuItemButton.styleFrom(
+            foregroundColor: Colors.red,
           // foregroundColor: test.color,
+          )
         );
       }).toList(),
     );

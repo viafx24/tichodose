@@ -27,7 +27,7 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
       //inputDecorationTheme: InputDecoration(),
       
       label: const Text("Choisir un type de médicament"),
-      textStyle: const TextStyle(color:Colors.blue),
+      textStyle: const TextStyle(color:Colors.green),
       //menuStyle: MenuStyle(backgroundColor:  WidgetStateProperty.all( Color.fromARGB(255, 170, 215, 252))),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown1(newValue);
@@ -42,7 +42,7 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
           value: value,
           label: value,
           style: MenuItemButton.styleFrom(
-          foregroundColor: Colors.blue,
+          foregroundColor: Colors.green,
           //backgroundColor: const Color.fromARGB(255, 212, 234, 251),
           )
         );

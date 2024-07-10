@@ -34,6 +34,7 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
       requestFocusOnTap: true,
       width: width,
       label: const Text("Choisir un médicament"),
+      textStyle: const TextStyle(color:Colors.blue),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown2(newValue);
         context.read<MyVariableToListen>().settextDropdown3(null);
@@ -45,8 +46,10 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
         return DropdownMenuEntry(
           value: value,
           label: value,
-          //style: MenuItemButton.styleFrom(
+          style: MenuItemButton.styleFrom(
+            foregroundColor: Colors.blue,
           // foregroundColor: test.color,
+          )
         );
       }).toList(),
     );
