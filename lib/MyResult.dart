@@ -61,7 +61,10 @@ class _MyResultState extends State<MyResult> {
                     fontSize: 28.0, fontWeight: FontWeight.bold)),
             const SizedBox(height: 7),
             const Text(
-                "Ne faites pas une confiance aveugle à ce logiciel. Vérifier les calculs par vous-même.",
+                "Les volumes à prélever inférieurs à 0.03 ml doivent faire l'objet d'un protocole de dilution. ",
+                style: TextStyle(fontSize: 12.0, color: Colors.cyan)),
+            const Text(
+                "Ne faites pas une confiance aveugle à ce logiciel. Vérifier les calculs par vous-même. ",
                 style: TextStyle(fontSize: 12.0, color: Colors.red)),
           ],
         ));
