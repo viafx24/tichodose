@@ -19,12 +19,19 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     int? poids = context.watch<MyVariableToListen>().poids;
     String? equation = myMapMedocs[textDropdown2]!.map[textDropdown3];
     equation = equation?.replaceAll("poids", poids.toString());
-    String volume = equation!.interpret().toStringAsFixed(3);
+    String volume = equation!.interpret().toStringAsFixed(4);
     double volumeAsDouble=double.parse(volume);
-    if (volumeAsDouble > 0.03)
+
+    if (volumeAsDouble >= 0.001 && volumeAsDouble < 0.03)
+    {
+      volume = equation.interpret().toStringAsFixed(3);
+    }
+
+    if (volumeAsDouble >= 0.03)
     {
       volume = equation.interpret().toStringAsFixed(2);
     }
+
     return SizedBox(
       width: 300,
       child: ElevatedButton(

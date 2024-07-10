@@ -19,7 +19,7 @@ class MyMedicament {
 MyMedicament melox = MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", {
   'oiseau (1mg/kg)': 'poids/1500',
   'Gros rapace > 1500gr (0.5mg/kg)': 'poids/1500/2',
-  'Cygne (0.2mg/ml)': 'poids/1500/5',
+  'Cygne (0.2mg/kg)': 'poids/1500/5',
   'Hérisson (0.2mg/kg)': 'poids*0.2/1000/1.5',
   'Lapin dose min (0.3mg/kg)': 'poids*0.3/1000/1.5',
   'Lapin dose max (1mg/kg)': 'poids*1/1000/1.5',
@@ -38,8 +38,8 @@ MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire", {
   'Hérisson demi dose (2mg/kg)': 'poids*2/1000/2',
   'Rongeur/Lapin dose min (0.5mg/kg)': 'poids*0.5/1000/2',
   'Rongeur/Lapin dose max (2mg/kg)': 'poids*2/1000/2',
-  'Chevreuil (3ml/100kg)': 'poids*3/100/1000',
-  'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10/1000',
+  'Chevreuil (3ml/100kg)': 'poids*3/100000',
+  'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10000',
   'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
 });
 
@@ -99,7 +99,7 @@ MyMedicament oxytetracycline = MyMedicament("Oxytetracycline", "Antibiotique", {
   'Blaireau (5mg/kg)': 'poids*5/1000/50',
   'Rongeur (30mg/kg)': 'poids*30/1000/50',
   'Lapin VO (50mg/kg) ': 'poids*50/1000/50',
-  'Chevreuil (2ml/10kg)': 'poids*2/10/1000',
+  'Chevreuil (2ml/10kg)': 'poids*2/10000',
 });
 
 MyMedicament shotapen = MyMedicament("Shotapen", "Antibiotique", {
@@ -118,7 +118,7 @@ MyMedicament panacur = MyMedicament("Panacur", "Antiparasitaire", {
 });
 
 MyMedicament virbamec = MyMedicament("Virbamec", "Antiparasitaire", {
-  'Gros oiseau (0.05ml/kg)': 'poids/20000',
+  'Gros oiseau (0.05ml/kg)': 'poids*0.05/1000',
 });
 
 MyMedicament flagyl = MyMedicament("Flagyl", "Antiparasitaire", {
@@ -141,12 +141,12 @@ MyMedicament levamisole = MyMedicament("Levamisole", "Antiparasitaire", {
 });
 
 MyMedicament nemisole = MyMedicament("Nemisole", "Antiparasitaire", {
-  'Mammifère demi dose (12.5mg/kg)': 'poids*0.125/1000',
-  'Mammifère pleine dose (25mg/kg)': 'poids*0.25/1000',
+  'Mammifère demi dose (12.5mg/kg)': 'poids*12.5/1000/150',
+  'Mammifère pleine dose (25mg/kg)': 'poids*25/1000/150',
 });
 
 MyMedicament emeprid = MyMedicament("Emeprid ", "Divers", {
-  'Oiseau (0.1ml/kg)': 'poids/10000',
+  'Oiseau (0.1ml/kg)': 'poids*0.1/1000',
   'Mammifère dose min (0.2mg/kg)': 'poids*0.2/1000',
   'Mammifère dose max (1mg/kg)': 'poids*1/1000',
 });
@@ -160,7 +160,7 @@ MyMedicament fercobsang = MyMedicament("Fercobsang", "Divers", {
 });
 
 MyMedicament actiselem = MyMedicament("Actiselem", "Divers", {
-  'Oiseau (1ml/10kg)': 'poids*0.1/1000',
+  'Oiseau (1ml/10kg)': 'poids*1/10000',
 });
 MyMedicament kaopectate = MyMedicament("Kaopectate", "Divers", {
   'Mammifère (1ml/kg)': 'poids/1000',
