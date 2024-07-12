@@ -17,7 +17,7 @@ class MyMedicament {
 }
 
 MyMedicament melox = MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", {
-  'oiseau (1mg/kg)': 'poids/1500',
+  'Oiseau (1mg/kg)': 'poids/1500',
   'Gros rapace > 1500gr (0.5mg/kg)': 'poids/1500/2',
   'Cygne (0.2mg/kg)': 'poids/1500/5',
   'Hérisson (0.2mg/kg)': 'poids*0.2/1000/1.5',
