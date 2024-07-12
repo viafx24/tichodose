@@ -20,14 +20,15 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
     return DropdownMenu(
       initialSelection: null,
       // controller: dropDownMenu1Controller,
-      // enableFilter: true,
-      // requestFocusOnTap: true,
+      //enableFilter: true,
+      //enableSearch: true,
+      //requestFocusOnTap: false,
       width: width,
       //labelStyle:const TextStyle(color:Colors.blue),
       //inputDecorationTheme: InputDecoration(),
       
       label: const Text("Choisir un type de médicament"),
-      textStyle: const TextStyle(color:Colors.green),
+      textStyle: const TextStyle(color:Color.fromARGB(255, 2, 130, 7)),
       //menuStyle: MenuStyle(backgroundColor:  WidgetStateProperty.all( Color.fromARGB(255, 170, 215, 252))),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown1(newValue);
@@ -42,7 +43,7 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
           value: value,
           label: value,
           style: MenuItemButton.styleFrom(
-          foregroundColor: Colors.green,
+          foregroundColor: Color.fromARGB(255, 2, 130, 7),
           //backgroundColor: const Color.fromARGB(255, 212, 234, 251),
           )
         );

@@ -23,14 +23,15 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
       initialSelection: null,
       // controller: dropDownMenu3Controller,
       // enableFilter: true,
+      enableSearch: true,
       // // requestFocusOnTap is enabled/disabled by platforms when it is null.
       // // On mobile platforms, this is false by default. Setting this to true will
       // // trigger focus request on the text field and virtual keyboard will appear
       // // afterward. On desktop platforms however, this defaults to true.
-      requestFocusOnTap: true,
+      //requestFocusOnTap: true,
       width: width,
       label: const Text("Choisir un animal/dosage"),
-      textStyle: const TextStyle(color:Colors.red),
+      textStyle: const TextStyle(color:Color.fromARGB(255, 184, 2, 144)),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown3(newValue);
         context.read<MyVariableToListen>().setPoids(null);
@@ -47,7 +48,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
           value: value,
           label: value,
           style: MenuItemButton.styleFrom(
-            foregroundColor: Colors.red,
+            foregroundColor: Color.fromARGB(255, 184, 2, 144),
           // foregroundColor: test.color,
           )
         );
