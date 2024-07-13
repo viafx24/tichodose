@@ -10,19 +10,9 @@ import 'MyInputField.dart';
 import 'MyResetButton.dart';
 import 'MyResult.dart';
 
-import 'dart:io'; 
-import 'package:window_size/window_size.dart';
 
 void main() {
 
-  WidgetsFlutterBinding.ensureInitialized();
-
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('Tichodose+++');
-    setWindowMaxSize(const Size(1000, 1000));
-    setWindowMinSize(const Size(600, 600));
-  }
-  
   runApp(
     Phoenix(
         child: MultiProvider(
