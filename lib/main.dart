@@ -18,9 +18,9 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('Tichodose');
-    // setWindowMaxSize(const Size(800, 800));
-    // setWindowMinSize(const Size(800, 800));
+    setWindowTitle('Tichodose+++');
+    setWindowMaxSize(const Size(1000, 1000));
+    setWindowMinSize(const Size(600, 600));
   }
   
   runApp(
