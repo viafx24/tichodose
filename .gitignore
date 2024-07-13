@@ -6,7 +6,7 @@
 !*.dart
 !*.yaml
 !*/
-
+!Politique-de-confidentialité.txt
 
 # Miscellaneous
 *.class

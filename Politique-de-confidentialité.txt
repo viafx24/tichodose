@@ -1,0 +1,6 @@
+Politique de confidentialité :
+
+L’application « Tichodose » ne collecte ni n’utilise aucune information personnelle.
+En particulier, l’application ne se connecte pas à internet.
+Il n’y a donc aucun transfert d’information sous quelque forme que ce soit.
+ L’utilisation de l’application reste donc totalement privée.
