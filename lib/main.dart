@@ -10,7 +10,7 @@ import 'MyInputField.dart';
 import 'MyResetButton.dart';
 import 'MyResult.dart';
 
-
+// test commentaire
 void main() {
 
   runApp(
@@ -41,6 +41,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     String? volume = context.watch<MyVariableToListen>().volume;
 
     return MaterialApp(
+        debugShowCheckedModeBanner: false,  // Add this line
         theme: ThemeData(
           useMaterial3: true,
           colorSchemeSeed: Colors.green,
