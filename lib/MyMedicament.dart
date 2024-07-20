@@ -31,7 +31,8 @@ MyMedicament melox = MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", 
 });
 
 MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire", {
-  'Oiseau (4mg/kg)': 'poids/500',
+  'Oiseau pleine dose (4mg/kg)': 'poids/500',
+  'Oiseau demi dose (2mg/kg)': 'poids/500/2',
   'Gros rapace (1mg/kg)': 'poids/500/4',
   'Gros rapace Neuro++ (4mg/kg)': 'poids/500',
   'Hérisson pleine dose (4mg/kg)': 'poids*4/1000/2',
