@@ -37,7 +37,7 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
       textStyle: const TextStyle(color:Color.fromARGB(255, 6, 42, 250)),
       onSelected: (newValue) {
         context.read<MyVariableToListen>().settextDropdown2(newValue);
-        context.read<MyVariableToListen>().settextDropdown3(null);
+        context.read<MyVariableToListen>().settextDropdown3(null);// David
         context.read<MyVariableToListen>().setPoids(null);
         context.read<MyVariableToListen>().setVolume(null);
       },
