@@ -28,6 +28,7 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
     filteredMedicamentString.sort();
 
     return DropdownMenu(
+      key: ValueKey(textDropdown1),
       initialSelection: null,
       // controller: dropDownMenu2Controller,
       // enableFilter: true,

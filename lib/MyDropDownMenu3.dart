@@ -20,6 +20,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
     mapMedocsKeys.sort();
 
     return DropdownMenu(
+      key: ValueKey(textDropdown2),
       initialSelection: null,
       // controller: dropDownMenu3Controller,
       // enableFilter: true,

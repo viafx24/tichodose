@@ -18,6 +18,7 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
   Widget build(BuildContext context) {
     categorieNames.sort();
     return DropdownMenu(
+      //key: ValueKey(context.watch<MyVariableToListen>().textDropdown1),
       initialSelection: null,
       // controller: dropDownMenu1Controller,
       //enableFilter: true,
