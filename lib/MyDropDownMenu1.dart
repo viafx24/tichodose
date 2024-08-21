@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'MyVariableToListen.dart';
 import 'MyMedicament.dart';
 
-
 class MyDropDownMenu1 extends StatefulWidget {
   const MyDropDownMenu1({super.key});
 
@@ -16,7 +15,9 @@ class _MyDropDownMenu1State extends State<MyDropDownMenu1> {
 
   @override
   Widget build(BuildContext context) {
-    categorieNames.sort();
+    List<String> categorieNames = MyMedicament.getCategorieNames();
+
+    //categorieNames.sort();
     return DropdownMenu(
       //key: ValueKey(context.watch<MyVariableToListen>().textDropdown1),
       initialSelection: null,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'MyVariableToListen.dart';
+//import 'Medicaments_Data.dart';
 import 'MyMedicament.dart';
 
 class MyDropDownMenu3 extends StatefulWidget {
@@ -16,6 +17,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
   @override
   Widget build(BuildContext context) {
     var textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
+    Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
     List mapMedocsKeys = myMapMedocs[textDropdown2]!.map.keys.toList();
     mapMedocsKeys.sort();
 

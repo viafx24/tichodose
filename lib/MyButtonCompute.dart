@@ -17,6 +17,7 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
     String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
     int? poids = context.watch<MyVariableToListen>().poids;
+    Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
     String? equation = myMapMedocs[textDropdown2]!.map[textDropdown3];
     equation = equation?.replaceAll("poids", poids.toString());
     String volume = equation!.interpret().toStringAsFixed(4);

@@ -17,6 +17,8 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
   Widget build(BuildContext context) {
     var textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
 
+    List<MyMedicament> mesMedocs = MyMedicament.getMedicaments();
+
     final List<MyMedicament> filteredMedicament = mesMedocs
         .where((MyMedicament) => MyMedicament.categorie == textDropdown1)
         .toList();
