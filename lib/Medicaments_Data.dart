@@ -1,7 +1,6 @@
 import "MyMedicament.dart";
 
 void initializeMedicaments() {
-  
   MyMedicament melox =
       MyMedicament("Melox / metacam (VO)", "Anti-inflammatoire", {
     'Oiseau (1mg/kg)': 'poids/1500',

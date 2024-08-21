@@ -53,7 +53,8 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
       debugShowCheckedModeBanner: false, // Supprimer le bandeau de débogage
       theme: ThemeData(
         useMaterial3: true, // Utiliser le thème Material Design 3
-        colorSchemeSeed: Colors.green, // Définir la couleur du schéma de couleurs
+        colorSchemeSeed:
+            Colors.green, // Définir la couleur du schéma de couleurs
       ),
       home: Scaffold(
         body: SafeArea(
@@ -66,12 +67,13 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   const MyDropDownMenu1(), // Menu déroulant 1
 
                   SizedBox(height: widgetSpace), // Espacement
-                  
+
                   // Ajouter MyDropDownMenu2 si textDropdown1 n'est pas nul
                   if (textDropdown1 != null)
                     const MyDropDownMenu2()
                   else
-                    SizedBox.shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox
+                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   SizedBox(height: widgetSpace), // Espacement
 
@@ -79,7 +81,8 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   if (textDropdown2 != null)
                     const MyDropDownMenu3()
                   else
-                    SizedBox.shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox
+                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   SizedBox(height: widgetSpace), // Espacement
 
@@ -87,7 +90,8 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   if (textDropdown3 != null)
                     const MyInputField()
                   else
-                    SizedBox.shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox
+                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   SizedBox(height: widgetSpace), // Espacement
 
@@ -95,13 +99,15 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   if (poids != null)
                     const MyButtonCompute()
                   else
-                    SizedBox.shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox
+                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter MyResult si volume n'est pas nul
                   if (volume != null)
                     const MyResult()
                   else
-                    SizedBox.shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox
+                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter SizedBox avec hauteur différente selon que volume est nul ou non
                   if (volume != null)
