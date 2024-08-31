@@ -78,7 +78,7 @@ class _MyResultState extends State<MyResult> {
               style: TextStyle(fontSize: 12.0, color: Colors.cyan)),
           // Affiche un avertissement sur la vérification des résultats
           const Text(
-              "Ne faites pas une confiance aveugle à ce logiciel. Vérifier les calculs par vous-même. ",
+              "Ne faites pas une confiance aveugle à ce logiciel. Vérifiez les calculs par vous-même. ",
               style: TextStyle(fontSize: 12.0, color: Colors.red)),
         ],
       ),
