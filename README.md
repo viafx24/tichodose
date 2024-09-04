@@ -17,17 +17,17 @@
 
 ## Le coin des développeurs
 
-Si je devais me faire manger par un Hibou grand duc :smile:, voici quelques informations pour un eventuel informaticien qui voudrait reprendre la suite de ce travail. Le code est écrit en dart via le framework open-source "Flutter" développé par Google. Flutter/dart a l'avantage d'être multiplateforme: le même code peut fonctionner sous android, windows, linux, iOS et macOS. Pour l'instant Tichodose est seulement accessible sous windows et android (et eventuellement linux sur demande) pour de simples raisons financières: le devellopement de Tichodose pour les appareils apple aurait un cout annuel prohibitif pour notre association (100 euros/an).
+Si je devais me faire manger par un Hibou Grand-Duc 😄, voici quelques informations pour un éventuel informaticien qui voudrait reprendre la suite de ce travail. Le code est écrit en dart via le framework open-source "Flutter" développé par Google. Flutter/dart a l'avantage d'être multiplateforme : le même code peut fonctionner sous android, windows, linux, iOS et macOS. Pour l'instant Tichodose est seulement accessible sous windows et android (et éventuellement linux sur demande) pour de simples raisons financières: le développement de Tichodose pour les appareils apple aurait un cout annuel prohibitif pour notre association (100 euros/an).  
 
-Si Flutter est probablement l'alternative la plus facile et la plus simple pour développer à la fois sous Android et windows, cela reste, de mon point de vue, un outils reservé à des informaticiens chevronnés. Avoir quelques bases en informatique ne suffit probablement pas pour comprendre aisément le code source qui fait appel à de nombreux concepts avancés d'informatique. Et il faut nécessairement se taper un petit peu de documentation sur le fonctionnement de Flutter. Néanmoins, une fois les bases de Flutter assimilé ( ce qui est assez rapide), générer un executable windows ou un appbundle android est l'affaire d'un clique. C'est l'avantage du mutliplateforme. 
+Si Flutter est probablement l'alternative la plus facile et la plus simple pour développer à la fois sous Android et windows, cela reste, de mon point de vue, un outil réservé à des informaticiens chevronnés. Avoir quelques bases en informatique ne suffit probablement pas pour comprendre aisément le code source qui fait appel à de nombreux concepts avancés d'informatique. Et il faut nécessairement se taper un peu de documentation sur le fonctionnement de Flutter. Néanmoins, une fois les bases de Flutter assimilés (ce qui est assez rapide), générer un exécutable windows ou un appbundle android est l'affaire d'un clic. C'est l'avantage du multiplateforme.  
 
-J'ai essayé de commenter correctement mon code (via des outils d'IA). Les fichiers principaux .dart sont ici: https://github.com/viafx24/tichodose/tree/main/lib
+J'ai essayé de commenter correctement mon code (via des outils d'IA). Les fichiers principaux .dart sont ici: https://github.com/viafx24/tichodose/tree/main/lib  
 
-J'ai collé ci-dessous l'analyse askthecode/chatGPT qui fournit une brève analyse des fichiers principaux de Tichodose. 
-
-Bon courage à tout repreneur/successeur éventuel de ce code et de l'application Tichodose.
+J'ai collé ci-dessous l'analyse askthecode/chatGPT qui fournit une brève analyse des fichiers principaux de Tichodose.
+Bon courage à tout repreneur/successeur éventuel de ce code / application Tichodose.  
 
 Guillaume
+
 
 ### Analyse askthecode/ChatGPT
 
