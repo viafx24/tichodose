@@ -44,7 +44,8 @@ Le dépôt GitHub analysé contient principalement du code Flutter pour une appl
  
 L'application semble bien structurée et utilise des techniques modernes de gestion d'état avec Flutter (Provider). Les menus déroulants sont dynamiques et s'adaptent aux choix précédents, ce qui améliore l'expérience utilisateur.
 
-L'icône de l'application a été créé par Kerismaker.
+L'icône de l'application a été créé par Kerismaker (https://www.flaticon.com).  
+
 <p align="center">
 <img src="https://github.com/viafx24/tichodose/blob/main/images/playstore.png" alt="Icône de l'application" width="10%">
 </p>
