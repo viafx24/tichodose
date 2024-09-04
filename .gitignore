@@ -7,6 +7,7 @@
 !*.yaml
 !*/
 !Politique-de-confidentialité.txt
+!/images/*
 
 # Miscellaneous
 *.class
