@@ -1,9 +1,7 @@
 # tichodose
 ## Le coin des testeurs
-<p><p>
 
- 
-<p>Tichodose est une application qui simplifie le calcul des doses de médicaments à administrer à des animaux sauvages. Développée pour un centre de sauvegarde de la faune sauvage en Isère (le Tichodrome), cette application s'adresse aux collaborateurs (bénévoles ou salariés) qui éprouvent des difficultés dans le calcul des dosages de médicaments et recherchent une solution susceptible de leur faire gagner du temps et de minimiser le risque d'erreur.<p>  
+<p>Tichodose est une application qui simplifie le calcul des doses de médicaments à administrer à des animaux sauvages. Développée pour un centre de sauvegarde de la faune sauvage en Isère (le Tichodrome), cette application s'adresse aux collaborateurs (bénévoles ou salariés) qui éprouvent des difficultés dans le calcul des dosages de médicaments et recherchent une solution susceptible de leur faire gagner du temps et de minimiser le risque d'erreur. Il existe actuellement une version Windows pour ordinateur et une version Android pour smartphone.  <p>  
 
 <p align="center">
 <img src="https://github.com/viafx24/tichodose/blob/main/images/DALL%C2%B7E%202024-09-01%2010.41.51%20-%20A%20m.png" alt="Image de présentation" width="50%">
@@ -11,7 +9,7 @@
 
 <p>Avec cette application, il n'est plus nécessaire de résoudre les équations manuellement ou avec une calculatrice car toutes les équations (environ 75) sont pré-rentrées dans le programme et l'utilisateur n'a qu'à choisir le cas de figure qui correspond à son besoin. En particulier, l'utilisateur choisit le type de médicament, le nom du médicament, le dosage approprié et le poids de l'animal. L'application se charge de faire le calcul, donne le résultat et montre l'équation qui a été utilisée pour vérification par l’utilisateur.<p>
 	
-<p>ATTENTION, cette application est en version BETA c’est-à-dire en phase de test préliminaire afin de faire vérifier les équations par des professionnels. Pour l’instant, elle s’adresse donc UNIQUEMENT aux collaborateurs en mesure de vérifier les calculs par eux-mêmes.<p>
+<p>ATTENTION, cette application est en version BETA c’est-à-dire en phase de test préliminaire durant laquelle les équations vont être vérifiées par des professionnels. Pour l’instant, elle s’adresse donc UNIQUEMENT aux collaborateurs en mesure de vérifier les calculs par eux-mêmes.<p>
 
 <p align="center">
   <img src="https://github.com/viafx24/tichodose/blob/main/images/Capture_4.png" alt="capture d'écran">
@@ -19,15 +17,15 @@
 
 ## Le coin des développeurs
 
-Si je devais me faire manger par un Hibou grand duc :-), voici quelques informations pour un eventuel informaticien qui voudrait reprendre la suite de ce travail. Le code est écrit en dart via le framework open-source "Flutter" développé par Google. Flutter/dart a l'avantage d'être multiplateforme: le même code peut fonctionner sous android, windows, linux, iOS et macOS. Pour l'instant Tichodose est seulement accessible sous windows et android (et eventuellement linux sur demande) pour de simples raisons financières: le devellopement de Tichodose pour les appareils apple aurait un cout annuel prohibitif pour notre association (100 euros/an).
+Si je devais me faire manger par un Hibou grand duc :smile:, voici quelques informations pour un eventuel informaticien qui voudrait reprendre la suite de ce travail. Le code est écrit en dart via le framework open-source "Flutter" développé par Google. Flutter/dart a l'avantage d'être multiplateforme: le même code peut fonctionner sous android, windows, linux, iOS et macOS. Pour l'instant Tichodose est seulement accessible sous windows et android (et eventuellement linux sur demande) pour de simples raisons financières: le devellopement de Tichodose pour les appareils apple aurait un cout annuel prohibitif pour notre association (100 euros/an).
 
-Si Flutter est probablement l'alternative la plus facile et la plus simple pour développer à la fois sous Android et windows, cela reste, de mon point de vue, un outils reservé à des informaticiens chevronnés. Avoir quelques bases en informatique ne suffit pas, à mon avis, pour comprendre aisément le code source qui fait appel à de nombreux concepts avancés d'informatique. Et il faut nécessairement se taper un petit peu de documentation sur le fonctionnement de Flutter. Néanmoins, une fois les bases de Flutter assimilé, générer un executable windows ou un appbundle android est l'affaire d'un clique. C'est l'avantage du mutliplateforme. 
+Si Flutter est probablement l'alternative la plus facile et la plus simple pour développer à la fois sous Android et windows, cela reste, de mon point de vue, un outils reservé à des informaticiens chevronnés. Avoir quelques bases en informatique ne suffit probablement pas pour comprendre aisément le code source qui fait appel à de nombreux concepts avancés d'informatique. Et il faut nécessairement se taper un petit peu de documentation sur le fonctionnement de Flutter. Néanmoins, une fois les bases de Flutter assimilé ( ce qui est assez rapide), générer un executable windows ou un appbundle android est l'affaire d'un clique. C'est l'avantage du mutliplateforme. 
 
-J'ai essayé de commenter correctement mon code (via des outils d'IA) mais connaitre un peu Flutter est sans doute un prérequis pour comprendre toutes les subtilités. Les fichiers principaux .dart sont ici: https://github.com/viafx24/tichodose/tree/main/lib
+J'ai essayé de commenter correctement mon code (via des outils d'IA). Les fichiers principaux .dart sont ici: https://github.com/viafx24/tichodose/tree/main/lib
 
-J'ai collé ci-dessous l'analyse askthecode/chatGPT qui fournit une brève analyse assez juste des fichiers principaux de Tichodose. 
+J'ai collé ci-dessous l'analyse askthecode/chatGPT qui fournit une brève analyse des fichiers principaux de Tichodose. 
 
-Bon courage à tout repreneur/successeur éventuel de ce code.
+Bon courage à tout repreneur/successeur éventuel de ce code et de l'application Tichodose.
 
 Guillaume
 
