@@ -9,7 +9,7 @@
 
 <p>Avec cette application, il n'est plus nécessaire de résoudre les équations manuellement ou avec une calculatrice car toutes les équations (environ 75) sont pré-rentrées dans le programme et l'utilisateur n'a qu'à choisir le cas de figure qui correspond à son besoin. En particulier, l'utilisateur choisit le type de médicament, le nom du médicament, le dosage approprié et le poids de l'animal. L'application se charge de faire le calcul, donne le résultat et montre l'équation qui a été utilisée pour vérification par l’utilisateur.<p>
 	
-<p><b>ATTENTION</b>, cette application est en version BETA c’est-à-dire en phase de test préliminaire durant laquelle les équations vont être vérifiées par des professionnels. Pour l’instant, elle s’adresse donc UNIQUEMENT aux collaborateurs en mesure de vérifier les calculs par eux-mêmes.<p>
+<p><b>ATTENTION, cette application est en version BETA c’est-à-dire en phase de test préliminaire durant laquelle les équations vont être vérifiées par des professionnels. Pour l’instant, elle s’adresse donc UNIQUEMENT aux collaborateurs en mesure de vérifier les calculs par eux-mêmes.</b><p>
 
 <p align="center">
   <img src="https://github.com/viafx24/tichodose/blob/main/images/Capture_4.png" alt="capture d'écran">
