@@ -37,12 +37,12 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
         double.parse(volume); // Conversion du volume en double
 
     // Ajustement du formatage du volume en fonction de sa taille
-    if (volumeAsDouble >= 0.001 && volumeAsDouble < 0.03) {
+    if (volumeAsDouble >= 0.001 && volumeAsDouble < 0.035) {
       volume =
           equation.interpret().toStringAsFixed(3); // Formatage avec 3 décimales
     }
 
-    if (volumeAsDouble >= 0.03) {
+    if (volumeAsDouble >= 0.035) {
       volume =
           equation.interpret().toStringAsFixed(2); // Formatage avec 2 décimales
     }

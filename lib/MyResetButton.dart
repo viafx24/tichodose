@@ -38,6 +38,7 @@ class _MyResetButtonState extends State<MyResetButton> {
         child:
             const Text('Reset / nouveau calcul'), // Texte affiché sur le bouton
       ),
+      
     );
   }
 }

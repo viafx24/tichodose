@@ -57,6 +57,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
             Colors.green, // Définir la couleur du schéma de couleurs
       ),
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Align(
             alignment: Alignment.topCenter, // Centrer le contenu
