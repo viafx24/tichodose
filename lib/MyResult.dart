@@ -33,15 +33,15 @@ class _MyResultState extends State<MyResult> {
     if (volume != null && poids != null) {
       volumeAsDouble = double.parse(volume);
       if (volumeAsDouble >= 0.015 && poids >= 30) {
-        volumeAfterDilution = volumeAsDouble * 5;
-        roundVolumeAfterDilution = volumeAfterDilution.toStringAsFixed(2);
-        dilutionFactor = 5.toString();
+        volumeAfterDilution = volumeAsDouble * 3;
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        dilutionFactor = 3.toString();
         volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.4.toString();
+        volumeNaclDilution = 0.2.toString();
       }
       if (volumeAsDouble < 0.015 && volumeAsDouble >= 0.005 && poids >= 30) {
         volumeAfterDilution = volumeAsDouble * 10;
-        roundVolumeAfterDilution = volumeAfterDilution.toStringAsFixed(2);
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
         dilutionFactor = 10.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.9.toString();
@@ -49,10 +49,8 @@ class _MyResultState extends State<MyResult> {
 
       if (volumeAsDouble >= 0.015 && poids < 30) {
         volumeAfterDilution = volumeAsDouble * 3;
-        roundVolumeAfterDilution = volumeAfterDilution.toStringAsFixed(2);
-        nombreGoutte = (double.parse(volumeAsDouble.toStringAsFixed(2)) * 100)
-            .toInt()
-            .toString();
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
         dilutionFactor = 3.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.2.toString();
@@ -60,24 +58,20 @@ class _MyResultState extends State<MyResult> {
 
       if (volumeAsDouble < 0.015 && volumeAsDouble >= 0.01 && poids < 30) {
         volumeAfterDilution = volumeAsDouble * 5;
-        roundVolumeAfterDilution = volumeAfterDilution.toStringAsFixed(2);
-        nombreGoutte = (double.parse(volumeAsDouble.toStringAsFixed(2)) * 100)
-            .toInt()
-            .toString();
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
         dilutionFactor = 5.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.4.toString();
       }
 
       if (volumeAsDouble < 0.01 && volumeAsDouble >= 0.005 && poids < 30) {
-        volumeAfterDilution = volumeAsDouble * 10;
-        roundVolumeAfterDilution = volumeAfterDilution.toStringAsFixed(2);
-        nombreGoutte = (double.parse(volumeAsDouble.toStringAsFixed(2)) * 100)
-            .toInt()
-            .toString();
-        dilutionFactor = 10.toString();
+        volumeAfterDilution = volumeAsDouble * 9;
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
+        dilutionFactor = 9.toString();
         volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.9.toString();
+        volumeNaclDilution = 0.8.toString();
       }
 
       // if (volumeAsDouble < 0.005) {
@@ -128,17 +122,17 @@ class _MyResultState extends State<MyResult> {
           ),
           // Affiche le résultat de l'équation avec un style en gras et plus grand
           Text("$equation",
-              style:
-                  const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+              style:TextStyle(
+          fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 18.0 : 14.0, fontWeight: FontWeight.bold)),
           const SizedBox(height: 5), // Espacement vertical entre les widgets
-          const Text("soit:", style: TextStyle(fontSize: 16.0)),
+          Text("soit:", style: TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 16.0 : 14.0)),
           const SizedBox(height: 1), // Espacement vertical entre les widgets
           // Affiche le volume avec une taille de police plus grande
           Text("$volume ml",
               style:
-                  const TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold)),
+                  TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 28.0 : 18.0, fontWeight: FontWeight.bold)),
 
-          const SizedBox(height: 7), // Espacement vertical entre les widgets
+          const SizedBox(height: 1), // Espacement vertical entre les widgets
 
           // cas animaux dont le poids est supérieur à 30 gr.
 
@@ -146,7 +140,7 @@ class _MyResultState extends State<MyResult> {
               poids != null &&
               volumeAsDouble < 0.04 &&
               volumeAsDouble >= 0.005 &&
-              poids > 30) ...[
+              poids >= 30) ...[
             // Affiche un texte riche avec plusieurs styles
             const Divider(color: Colors.black, thickness: 1),
             Text.rich(
@@ -220,7 +214,7 @@ class _MyResultState extends State<MyResult> {
               poids != null &&
               volumeAsDouble < 0.04 &&
               volumeAsDouble >= 0.005 &&
-              poids <= 30) ...[
+              poids < 30) ...[
             // Affiche un texte riche avec plusieurs styles
             const Divider(color: Colors.black, thickness: 1),
             Text.rich(
