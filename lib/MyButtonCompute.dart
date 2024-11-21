@@ -25,6 +25,11 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     // Récupération de la carte des médicaments
     Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
 
+    // Récupération du mode d'administration
+
+    String? mode = myMapMedocs[textDropdown2]?.nameMode;
+    // Récupération des infos supplementaires
+    String? info = myMapMedocs[textDropdown2]?.nameInfo;
     // Récupération de l'équation de calcul à partir de la carte de médicaments
     String? equation = myMapMedocs[textDropdown2]!.map[textDropdown3];
 
@@ -47,7 +52,6 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
           equation.interpret().toStringAsFixed(2); // Formatage avec 2 décimales
     }
 
-
     double volumeAfterDilution = 0;
     String roundVolumeAfterDilution = "";
     String nombreGoutte = "";
@@ -55,30 +59,24 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     String volumeMedocDilution = "";
     String volumeNaclDilution = "";
 
-    if ( poids != null && volumeAsDouble < limiteVolumePipetable) {
-      if (volumeAsDouble >= 0.02 ) {
+    if (poids != null && volumeAsDouble < limiteVolumePipetable) {
+      if (volumeAsDouble >= 0.02) {
         volumeAfterDilution = volumeAsDouble * 3;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100)
+            .toStringAsFixed(
+                2); // pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        nombreGoutte = ((volumeAsDouble * 100).round())
+            .toString(); // Arrondi pour les gouttes
         dilutionFactor = 3.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.2.toString();
       }
-      if (volumeAsDouble < 0.02 && volumeAsDouble >= 0.01 ) {
+      if (volumeAsDouble < 0.02 && volumeAsDouble >= 0.01) {
         volumeAfterDilution = volumeAsDouble * 5;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gou// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        dilutionFactor = 5.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.4.toString();
-      }
-
-
-
-      if (volumeAsDouble < 0.015 && volumeAsDouble >= 0.01 && poids < poidsProtectionPassereaux) {
-        volumeAfterDilution = volumeAsDouble * 5;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
+        roundVolumeAfterDilution =
+            ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);
+        nombreGoutte = ((volumeAsDouble * 100).round())
+            .toString(); // Arrondi pour les gou// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
         dilutionFactor = 5.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.4.toString();
@@ -86,14 +84,16 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
 
       if (volumeAsDouble < 0.01 && volumeAsDouble >= limiteVolumeDilution) {
         volumeAfterDilution = volumeAsDouble * 10;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100)
+            .toStringAsFixed(
+                2); // pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
+        nombreGoutte = ((volumeAsDouble * 100).round())
+            .toString(); // Arrondi pour les gouttes
         dilutionFactor = 10.toString();
         volumeMedocDilution = 0.1.toString();
         volumeNaclDilution = 0.9.toString();
       }
     }
-
 
     // Retourne un bouton ElevatedButton encapsulé dans un SizedBox
     return SizedBox(
@@ -104,12 +104,22 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
           context.read<MyVariableToListen>().setEquation(equation);
           context.read<MyVariableToListen>().setVolume(volume);
           context.read<MyVariableToListen>().setvolumeAsDouble(volumeAsDouble);
-          context.read<MyVariableToListen>().setvolumeAfterDilution(volumeAfterDilution);
-          context.read<MyVariableToListen>().setroundVolumeAfterDilution(roundVolumeAfterDilution);
-          context.read<MyVariableToListen>().setnombreGoutte(nombreGoutte);
-          context.read<MyVariableToListen>().setdilutionFactor(dilutionFactor);
-          context.read<MyVariableToListen>().setvolumeMedocDilution(volumeMedocDilution);
-          context.read<MyVariableToListen>().setvolumeNaclDilution(volumeNaclDilution);
+          context
+              .read<MyVariableToListen>()
+              .setVolumeAfterDilution(volumeAfterDilution);
+          context
+              .read<MyVariableToListen>()
+              .setRoundVolumeAfterDilution(roundVolumeAfterDilution);
+          context.read<MyVariableToListen>().setNombreGoutte(nombreGoutte);
+          context.read<MyVariableToListen>().setDilutionFactor(dilutionFactor);
+          context
+              .read<MyVariableToListen>()
+              .setVolumeMedocDilution(volumeMedocDilution);
+          context
+              .read<MyVariableToListen>()
+              .setVolumeNaclDilution(volumeNaclDilution);
+          context.read<MyVariableToListen>().setMode(mode);
+          context.read<MyVariableToListen>().setInfo(info);
           // La ligne suivante est commentée, mais elle pourrait servir à déboguer
           // print((poids).toString());
         },

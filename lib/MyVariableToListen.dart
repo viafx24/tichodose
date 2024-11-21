@@ -30,6 +30,9 @@ class MyVariableToListen with ChangeNotifier {
   String? _volumeMedocDilution;
   String? _volumeNaclDilution;
 
+  String? _mode;
+  String? _info;
+
   // Contrôleur pour le champ de texte
   TextEditingController? _inputTextController = TextEditingController();
 
@@ -49,6 +52,9 @@ class MyVariableToListen with ChangeNotifier {
   String? get dilutionFactor => _dilutionFactor;
   String? get volumeMedocDilution => _volumeMedocDilution;
   String? get volumeNaclDilution => _volumeNaclDilution;
+
+  String? get mode => _mode;
+  String? get info => _info;
 
   TextEditingController? get inputTextController => _inputTextController;
 
@@ -88,36 +94,45 @@ class MyVariableToListen with ChangeNotifier {
     notifyListeners();
   }
 
-  void setvolumeAfterDilution(double? value) {
+  void setVolumeAfterDilution(double? value) {
     _volumeAfterDilution = value;
     notifyListeners();
   }
 
-  void setroundVolumeAfterDilution(String? value) {
+  void setRoundVolumeAfterDilution(String? value) {
     _roundVolumeAfterDilution = value;
     notifyListeners();
   }
 
-  void setnombreGoutte(String? value) {
+  void setNombreGoutte(String? value) {
     _nombreGoutte = value;
     notifyListeners();
   }
 
-  void setdilutionFactor(String? value) {
+  void setDilutionFactor(String? value) {
     _dilutionFactor = value;
     notifyListeners();
   }
 
-  void setvolumeMedocDilution(String? value) {
+  void setVolumeMedocDilution(String? value) {
     _volumeMedocDilution = value;
     notifyListeners();
   }
 
-  void setvolumeNaclDilution(String? value) {
+  void setVolumeNaclDilution(String? value) {
     _volumeNaclDilution = value;
     notifyListeners();
   }
 
+  void setMode(String? value) {
+    _mode = value;
+    notifyListeners();
+  }
+
+  void setInfo(String? value) {
+    _info = value;
+    notifyListeners();
+  }
 
   // Méthode pour nettoyer le contenu du TextEditingController et notifier les écouteurs
   void setInputText() {
