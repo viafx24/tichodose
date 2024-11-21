@@ -361,6 +361,11 @@ class _MyResultState extends State<MyResult> {
               style: TextStyle(fontSize: 14.0, color: Colors.red)),
 
           const Divider(color: Colors.black, thickness: 1),
+
+          const Text("Tichodose version beta 0.2 / novembre 2024",
+              style: TextStyle(fontSize: 14.0, color: Colors.cyan)),
+
+
         ],
       ),
     );

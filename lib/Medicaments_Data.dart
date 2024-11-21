@@ -45,7 +45,7 @@ void initializeMedicaments() {
     'Chevreuil (0.5mg/kg)': 'poids*0.5/1000/5',
   });
 
-  MyMedicament augmentin = MyMedicament("Augmentin", "Antibiotique","VO","Large spectre : troubles respiratoires, plaies, mauvais état général. Attention : jamais par en VO pour les rongeurs.", {
+  MyMedicament augmentin = MyMedicament("Augmentin", "Antibiotique","VO","Large spectre : troubles respiratoires, plaies, mauvais état général. Attention : jamais en VO pour les rongeurs.", {
     'Oiseau (1ml/kg)': 'poids/1000',
     'Hérisson (40 mg/kg)': 'poids*40/1000/112.5',
     'Petit carnivore (10 mg/kg)': 'poids*10/1000/112.5',
