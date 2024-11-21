@@ -65,6 +65,8 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
               child: Column(
                 children: <Widget>[
                   SizedBox(height: widgetSpace), // Espacement au-dessus
+                  const MyResetButton(), // Bouton de réinitialisation
+                  SizedBox(height: widgetSpace), // Espacement au-dessus
                   const MyDropDownMenu1(), // Menu déroulant 1
 
                   SizedBox(height: widgetSpace), // Espacement
@@ -116,7 +118,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   else
                     const SizedBox(height: 20),
 
-                  const MyResetButton(), // Bouton de réinitialisation
+                  
                 ],
               ),
             ),

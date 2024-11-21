@@ -1,9 +1,15 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 // Déclaration de variables globales pour les dimensions des widgets et un booléen
 double width = 300;
 double widgetSpace = 20;
 bool myBool = false;
+
+double poidsProtectionPassereaux = 35;
+double limiteVolumePipetable = 0.035;
+double limiteVolumeDilution = 0.005;
 
 // La classe MyVariableToListen étend ChangeNotifier pour notifier les écouteurs des changements d'état
 class MyVariableToListen with ChangeNotifier {
@@ -13,9 +19,16 @@ class MyVariableToListen with ChangeNotifier {
   String? _textDropdown3;
 
   int? _poids;
+  double? _volumeAsDouble;
   String? _volume;
-
   String? _equation;
+
+  double? _volumeAfterDilution;
+  String? _roundVolumeAfterDilution;
+  String? _nombreGoutte;
+  String? _dilutionFactor;
+  String? _volumeMedocDilution;
+  String? _volumeNaclDilution;
 
   // Contrôleur pour le champ de texte
   TextEditingController? _inputTextController = TextEditingController();
@@ -26,8 +39,16 @@ class MyVariableToListen with ChangeNotifier {
   String? get textDropdown3 => _textDropdown3;
 
   int? get poids => _poids;
+  double? get volumeAsDouble => _volumeAsDouble;
   String? get volume => _volume;
   String? get equation => _equation;
+
+  double? get volumeAfterDilution => _volumeAfterDilution;
+  String? get roundVolumeAfterDilution => _roundVolumeAfterDilution;
+  String? get nombreGoutte => _nombreGoutte;
+  String? get dilutionFactor => _dilutionFactor;
+  String? get volumeMedocDilution => _volumeMedocDilution;
+  String? get volumeNaclDilution => _volumeNaclDilution;
 
   TextEditingController? get inputTextController => _inputTextController;
 
@@ -52,6 +73,11 @@ class MyVariableToListen with ChangeNotifier {
     notifyListeners();
   }
 
+  void setvolumeAsDouble(double? value) {
+    _volumeAsDouble = value;
+    notifyListeners();
+  }
+
   void setVolume(String? value) {
     _volume = value;
     notifyListeners();
@@ -61,6 +87,37 @@ class MyVariableToListen with ChangeNotifier {
     _equation = value;
     notifyListeners();
   }
+
+  void setvolumeAfterDilution(double? value) {
+    _volumeAfterDilution = value;
+    notifyListeners();
+  }
+
+  void setroundVolumeAfterDilution(String? value) {
+    _roundVolumeAfterDilution = value;
+    notifyListeners();
+  }
+
+  void setnombreGoutte(String? value) {
+    _nombreGoutte = value;
+    notifyListeners();
+  }
+
+  void setdilutionFactor(String? value) {
+    _dilutionFactor = value;
+    notifyListeners();
+  }
+
+  void setvolumeMedocDilution(String? value) {
+    _volumeMedocDilution = value;
+    notifyListeners();
+  }
+
+  void setvolumeNaclDilution(String? value) {
+    _volumeNaclDilution = value;
+    notifyListeners();
+  }
+
 
   // Méthode pour nettoyer le contenu du TextEditingController et notifier les écouteurs
   void setInputText() {
@@ -76,70 +133,3 @@ class MyVariableToListen with ChangeNotifier {
     super.dispose(); // Appelle la méthode dispose de la classe parente
   }
 }
-
-
-
-// import 'package:flutter/material.dart';
-
-// double width = 300;
-// double widgetSpace = 20;
-// bool myBool = false;
-
-// class MyVariableToListen with ChangeNotifier {
-//   String? _textDropdown1;
-//   String? _textDropdown2;
-//   String? _textDropdown3;
-
-//   int? _poids;
-//   String? _volume;
-
-//   String? _equation;
-
-//   TextEditingController? _inputTextController = TextEditingController() ;
- 
-//   String? get textDropdown1 => _textDropdown1;
-//   String? get textDropdown2 => _textDropdown2;
-//   String? get textDropdown3 => _textDropdown3;
-
-//   int? get poids => _poids;
-//   String? get volume => _volume;
-//   String? get equation => _equation;
-
-//   TextEditingController? get inputTextController => _inputTextController;
-
-//   void settextDropdown1(String? value) {
-//     _textDropdown1 = value;
-//     notifyListeners();
-//   }
-
-//   void settextDropdown2(String? value) {
-//     _textDropdown2 = value;
-//     notifyListeners();
-//   }
-
-//     void settextDropdown3(String? value) {
-//     _textDropdown3 = value;
-//     notifyListeners();
-//   }
-
-//   void setPoids(int? value) {
-//     _poids = value;
-//     notifyListeners();
-//   }
-
-//   void setVolume(String? value) {
-//     _volume = value;
-//     notifyListeners();
-//   }
-
-//   void setEquation(String? value) {
-//     _equation = value;
-//     notifyListeners();
-//   }
-
-//   void setInputText() {
-//     _inputTextController!.clear();
-//     notifyListeners();
-//   }
-
-// }

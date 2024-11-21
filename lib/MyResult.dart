@@ -22,65 +22,13 @@ class _MyResultState extends State<MyResult> {
     String? equation = context.watch<MyVariableToListen>().equation;
     String? volume = context.watch<MyVariableToListen>().volume;
 
-    double? volumeAsDouble;
-    double volumeAfterDilution = 0;
-    String roundVolumeAfterDilution = "";
-    String nombreGoutte = "";
-    String dilutionFactor = "";
-    String volumeMedocDilution = "";
-    String volumeNaclDilution = "";
-
-    if (volume != null && poids != null) {
-      volumeAsDouble = double.parse(volume);
-      if (volumeAsDouble >= 0.015 && poids >= 30) {
-        volumeAfterDilution = volumeAsDouble * 3;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        dilutionFactor = 3.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.2.toString();
-      }
-      if (volumeAsDouble < 0.015 && volumeAsDouble >= 0.005 && poids >= 30) {
-        volumeAfterDilution = volumeAsDouble * 10;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        dilutionFactor = 10.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.9.toString();
-      }
-
-      if (volumeAsDouble >= 0.015 && poids < 30) {
-        volumeAfterDilution = volumeAsDouble * 3;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
-        dilutionFactor = 3.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.2.toString();
-      }
-
-      if (volumeAsDouble < 0.015 && volumeAsDouble >= 0.01 && poids < 30) {
-        volumeAfterDilution = volumeAsDouble * 5;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
-        dilutionFactor = 5.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.4.toString();
-      }
-
-      if (volumeAsDouble < 0.01 && volumeAsDouble >= 0.005 && poids < 30) {
-        volumeAfterDilution = volumeAsDouble * 9;
-        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// pour gérer l'imprécision de tostringasfixed, on utilise round et on passe en entier en mutlipliant par 100
-        nombreGoutte = ((volumeAsDouble * 100).round()).toString(); // Arrondi pour les gouttes
-        dilutionFactor = 9.toString();
-        volumeMedocDilution = 0.1.toString();
-        volumeNaclDilution = 0.8.toString();
-      }
-
-      // if (volumeAsDouble < 0.005) {
-      //   volumeAfterDilution = volumeAsDouble * 50;
-      //   dilutionFactor = 50.toString();
-      //   volumeMedocDilution = 0.02.toString();
-      //   volumeNaclDilution = 0.98.toString();
-      // }
-    }
+    double? volumeAsDouble = context.watch<MyVariableToListen>().volumeAsDouble;
+    double? volumeAfterDilution = context.watch<MyVariableToListen>().volumeAfterDilution;
+    String? roundVolumeAfterDilution = context.watch<MyVariableToListen>().roundVolumeAfterDilution;
+    String? nombreGoutte = context.watch<MyVariableToListen>().nombreGoutte;
+    String? dilutionFactor = context.watch<MyVariableToListen>().dilutionFactor;
+    String? volumeMedocDilution = context.watch<MyVariableToListen>().volumeMedocDilution;
+    String? volumeNaclDilution = context.watch<MyVariableToListen>().volumeNaclDilution;
 
     return Padding(
       padding: const EdgeInsets.all(
@@ -123,14 +71,14 @@ class _MyResultState extends State<MyResult> {
           // Affiche le résultat de l'équation avec un style en gras et plus grand
           Text("$equation",
               style:TextStyle(
-          fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 18.0 : 14.0, fontWeight: FontWeight.bold)),
+          fontSize: (volumeAsDouble != null && volumeAsDouble >= limiteVolumePipetable) ? 18.0 : 14.0, fontWeight: FontWeight.bold)),
           const SizedBox(height: 5), // Espacement vertical entre les widgets
-          Text("soit:", style: TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 16.0 : 14.0)),
+          Text("soit:", style: TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= limiteVolumePipetable) ? 16.0 : 14.0)),
           const SizedBox(height: 1), // Espacement vertical entre les widgets
           // Affiche le volume avec une taille de police plus grande
           Text("$volume ml",
               style:
-                  TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= 0.035) ? 28.0 : 18.0, fontWeight: FontWeight.bold)),
+                  TextStyle(fontSize: (volumeAsDouble != null && volumeAsDouble >= limiteVolumePipetable) ? 28.0 : 18.0, fontWeight: FontWeight.bold)),
 
           const SizedBox(height: 1), // Espacement vertical entre les widgets
 
@@ -138,9 +86,9 @@ class _MyResultState extends State<MyResult> {
 
           if (volumeAsDouble != null &&
               poids != null &&
-              volumeAsDouble < 0.04 &&
-              volumeAsDouble >= 0.005 &&
-              poids >= 30) ...[
+              volumeAsDouble < limiteVolumePipetable &&
+              volumeAsDouble >= limiteVolumeDilution &&
+              poids >= poidsProtectionPassereaux) ...[
             // Affiche un texte riche avec plusieurs styles
             const Divider(color: Colors.black, thickness: 1),
             Text.rich(
@@ -212,9 +160,9 @@ class _MyResultState extends State<MyResult> {
 
           if (volumeAsDouble != null &&
               poids != null &&
-              volumeAsDouble < 0.04 &&
-              volumeAsDouble >= 0.005 &&
-              poids < 30) ...[
+              volumeAsDouble < limiteVolumePipetable &&
+              volumeAsDouble >= limiteVolumeDilution &&
+              poids < poidsProtectionPassereaux) ...[
             // Affiche un texte riche avec plusieurs styles
             const Divider(color: Colors.black, thickness: 1),
             Text.rich(
@@ -250,7 +198,7 @@ class _MyResultState extends State<MyResult> {
               ),
             ),
 
-            Text("$nombreGoutte goutte(s)",
+            Text("$nombreGoutte goutte(s) c'est à dire $nombreGoutte x 0.01 ml",
                 style: const TextStyle(
                     fontSize: 18.0, fontWeight: FontWeight.bold)),
 
@@ -310,7 +258,7 @@ class _MyResultState extends State<MyResult> {
 
                   const TextSpan(
                       text:
-                          ". Mélangez puis expulsez le surplus de liquide jusqu'à :"),
+                          ". Mélangez, placez votre aiguille puis expulsez le surplus de liquide jusqu'à :"),
                 ],
               ),
             ),
@@ -323,7 +271,7 @@ class _MyResultState extends State<MyResult> {
             const Divider(color: Colors.black, thickness: 1),
           ],
 
-          if (volumeAsDouble != null && volumeAsDouble < 0.005) ...[
+          if (volumeAsDouble != null && volumeAsDouble < limiteVolumeDilution) ...[
             const Divider(color: Colors.black, thickness: 1),
             const Text(
                 "Dans ce cas précis, la méthode de dilution appropriée necessite une discussion avec une soigneuse.",
@@ -332,7 +280,7 @@ class _MyResultState extends State<MyResult> {
           ],
           // // Affiche un avertissement sur la vérification des résultats
           const Text("Pour l'instant, vérifiez les calculs par vous-même. ",
-              style: TextStyle(fontSize: 12.0, color: Colors.red)),
+              style: TextStyle(fontSize: 14.0, color: Colors.red)),
         ],
       ),
     );
