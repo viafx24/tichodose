@@ -343,7 +343,7 @@ class _MyResultState extends State<MyResult> {
 
           if (volumeAsDouble != null &&
               volumeAsDouble < limiteVolumeDilution) ...[
-            const Divider(color: Colors.black, thickness: 1),
+            
             const Text(
                 "Dans ce cas précis, la méthode de dilution appropriée necessite une discussion avec une soigneuse.",
                 style: TextStyle(fontSize: 14.0)),
@@ -365,7 +365,7 @@ class _MyResultState extends State<MyResult> {
           const Text("Tichodose version beta 0.2 / novembre 2024",
               style: TextStyle(fontSize: 14.0, color: Colors.cyan)),
 
-
+          const Divider(color: Colors.black, thickness: 1),
         ],
       ),
     );
