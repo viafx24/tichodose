@@ -10,6 +10,8 @@ import 'MyInputField.dart';
 import 'MyResetButton.dart';
 import 'MyResult.dart';
 import 'Medicaments_Data.dart';
+import 'MyRadioButton.dart';
+import 'MyInputFieldManual.dart';
 
 // Fonction principale du programme
 void main() {
@@ -48,6 +50,10 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
     int? poids = context.watch<MyVariableToListen>().poids;
     String? volume = context.watch<MyVariableToListen>().volume;
+    String selectedRadioValue =
+        context.watch<MyVariableToListen>().selectedRadioValue;
+
+    double?  inputManualDosage = context.watch<MyVariableToListen>().inputManualDosage;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Supprimer le bandeau de débogage
@@ -78,19 +84,29 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                     const SizedBox
                         .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
-                  SizedBox(height: widgetSpace), // Espacement
+                  //SizedBox(height: widgetSpace), // Espacement
 
                   // Ajouter MyDropDownMenu3 si textDropdown2 n'est pas nul
                   if (textDropdown2 != null)
-                    const MyDropDownMenu3()
+                    Column(
+                      children: [
+                        MyRadioButton(),
+                        SizedBox(height: widgetSpace), // 
+                        selectedRadioValue == "Dosage prédefini"
+                            ? const MyDropDownMenu3()
+                            : selectedRadioValue == "Dosage manuel"
+                                ? MyInputFieldManual()
+                                : const SizedBox
+                                    .shrink(), // Option par défaut si aucune condition n'est remplie
+                      ],
+                    )
                   else
-                    const SizedBox
-                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                    const SizedBox.shrink(),
 
                   SizedBox(height: widgetSpace), // Espacement
 
-                  // Ajouter MyInputField si textDropdown3 n'est pas nul
-                  if (textDropdown3 != null)
+                  // Ajouter MyInputField si te(xtDropdown3 n'est pas nul
+                  if (textDropdown3 != null || (inputManualDosage!=null) )
                     const MyInputField()
                   else
                     const SizedBox
@@ -117,8 +133,6 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                     const SizedBox(height: 1)
                   else
                     const SizedBox(height: 20),
-
-                  
                 ],
               ),
             ),

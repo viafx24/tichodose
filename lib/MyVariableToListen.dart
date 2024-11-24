@@ -1,4 +1,5 @@
-import 'dart:ffi';
+
+
 
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,11 @@ class MyVariableToListen with ChangeNotifier {
   String? _mode;
   String? _info;
 
+  String _selectedRadioValue = "Dosage prédefini"; // Valeur initiale
+
+  
+  double? _inputManualDosage;
+
   // Contrôleur pour le champ de texte
   TextEditingController? _inputTextController = TextEditingController();
 
@@ -56,7 +62,12 @@ class MyVariableToListen with ChangeNotifier {
   String? get mode => _mode;
   String? get info => _info;
 
+  String get selectedRadioValue => _selectedRadioValue;
+
+  double? get inputManualDosage => _inputManualDosage;
+
   TextEditingController? get inputTextController => _inputTextController;
+
 
   // Méthodes pour modifier les valeurs des propriétés et notifier les écouteurs des changements
   void settextDropdown1(String? value) {
@@ -134,10 +145,30 @@ class MyVariableToListen with ChangeNotifier {
     notifyListeners();
   }
 
+  void setRadio(String value) {
+    _selectedRadioValue = value;
+    notifyListeners(); // Notifie les widgets écoutant les changements
+  }
+
   // Méthode pour nettoyer le contenu du TextEditingController et notifier les écouteurs
   void setInputText() {
     _inputTextController?.clear(); // Vide le champ de texte
     notifyListeners();
+  }
+
+  // Méthode pour définir la valeur (sans "mg/kg")
+  void setInputManualDosage(String value) {
+    // Tente de convertir la valeur en double et met à jour l'état
+    _inputManualDosage = double.tryParse(value);
+    notifyListeners(); // Notifie les widgets abonnés à cette variable
+  }
+
+  // Méthode pour obtenir la valeur au format texte, incluant "mg/kg"
+  String get inputManualDosageWithUnit {
+    if (_inputManualDosage == null) {
+      return ''; // Retourne une chaîne vide si aucune valeur n'est définie
+    }
+    return '${_inputManualDosage!} mg/kg'; // Ajoute "mg/kg" à la valeur
   }
 
   // Méthode appelée lorsque l'objet ChangeNotifier est supprimé
