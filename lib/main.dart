@@ -106,7 +106,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   SizedBox(height: widgetSpace), // Espacement
 
                   // Ajouter MyInputField si te(xtDropdown3 n'est pas nul
-                  if (textDropdown3 != null || (inputManualDosage!=null) )
+                  if (textDropdown3 != null || inputManualDosage!=null)// ) 
                     const MyInputField()
                   else
                     const SizedBox

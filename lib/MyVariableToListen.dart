@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 
 // Déclaration de variables globales pour les dimensions des widgets et un booléen
@@ -33,10 +30,11 @@ class MyVariableToListen with ChangeNotifier {
 
   String? _mode;
   String? _info;
+  String? _dureeTraitement;
+  String? _uniteDosage;
 
   String _selectedRadioValue = "Dosage prédefini"; // Valeur initiale
 
-  
   double? _inputManualDosage;
 
   // Contrôleur pour le champ de texte
@@ -61,13 +59,14 @@ class MyVariableToListen with ChangeNotifier {
 
   String? get mode => _mode;
   String? get info => _info;
+  String? get dureeTraitement => _dureeTraitement;
+  String? get uniteDosage => _uniteDosage;
 
   String get selectedRadioValue => _selectedRadioValue;
 
   double? get inputManualDosage => _inputManualDosage;
 
   TextEditingController? get inputTextController => _inputTextController;
-
 
   // Méthodes pour modifier les valeurs des propriétés et notifier les écouteurs des changements
   void settextDropdown1(String? value) {
@@ -145,6 +144,16 @@ class MyVariableToListen with ChangeNotifier {
     notifyListeners();
   }
 
+  void setDureeTraitement(String? value) {
+    _dureeTraitement = value;
+    notifyListeners();
+  }
+
+  void setUniteDosage(String? value) {
+    _uniteDosage = value;
+    notifyListeners();
+  }
+
   void setRadio(String value) {
     _selectedRadioValue = value;
     notifyListeners(); // Notifie les widgets écoutant les changements
@@ -163,13 +172,42 @@ class MyVariableToListen with ChangeNotifier {
     notifyListeners(); // Notifie les widgets abonnés à cette variable
   }
 
-  // Méthode pour obtenir la valeur au format texte, incluant "mg/kg"
+ // Méthode pour obtenir la valeur au format texte, incluant "mg/kg"
   String get inputManualDosageWithUnit {
-    if (_inputManualDosage == null) {
+ 
+    if (_inputManualDosage == null  ||  _uniteDosage == null) {
+
       return ''; // Retourne une chaîne vide si aucune valeur n'est définie
     }
-    return '${_inputManualDosage!} mg/kg'; // Ajoute "mg/kg" à la valeur
+    return '${_inputManualDosage!} $_uniteDosage'; // Ajoute " à la valeur
+    
   }
+
+
+//   String get inputManualDosageWithUnit {
+//   // Ajout des impressions pour vérifier l'état des variables
+//   print("Vérification des variables dans inputManualDosageWithUnit:");
+//   print("_inputManualDosage: $_inputManualDosage");
+//   print("_uniteDosage: $_uniteDosage");
+
+//   // Vérifier si l'une des variables est null
+//   if (_inputManualDosage == null || _uniteDosage == null) {
+//     print("L'une des variables est null. Retourne une chaîne vide.");
+//     return ''; // Retourne une chaîne vide si aucune valeur n'est définie
+//   }
+
+//   // Si les variables sont valides, on retourne la valeur formatée
+//   print("Retourne la valeur formatée: '${_inputManualDosage!} mg/kg'");
+//   return '${_inputManualDosage!} mg/kg'; // Ajoute "mg/kg" à la valeur
+// }
+
+
+// String get inputManualDosageWithUnit {
+//   if (_inputManualDosage == null || _uniteDosage == null) {
+//     return '${_inputManualDosage ?? '0.0'} mg/kg'; // Utilisation d'une valeur par défaut si _uniteDosage est null
+//   }
+//   return '${_inputManualDosage!} $_uniteDosage'; 
+// }
 
   // Méthode appelée lorsque l'objet ChangeNotifier est supprimé
   @override

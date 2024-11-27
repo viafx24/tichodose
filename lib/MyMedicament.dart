@@ -10,6 +10,11 @@ class MyMedicament {
   String name;
   String mode;
   String info;
+  String dureeTraitement;
+  String uniteDosage;
+  String equation;
+  String concentrationSolution;
+
   Map<String, String> map;
 
   // Getter pour le nom du médicament
@@ -21,9 +26,15 @@ class MyMedicament {
   String get nameMode => mode;
   String get nameInfo => info;
 
+  String get nameDureeTraitement => dureeTraitement;
+
+  String get nameUniteDosage => uniteDosage;
+  String get nameEquation => equation;
+  String get nameConcentrationSolution => concentrationSolution;
+
   // Constructeur qui initialise les propriétés d'un médicament
   // Ajoute également l'instance à la liste statique et au Map statique
-  MyMedicament(this.name, this.categorie, this.mode, this.info, this.map) {
+  MyMedicament(this.name, this.categorie, this.mode, this.info, this.dureeTraitement,this.uniteDosage,this.concentrationSolution, this.equation, this.map) {
     _medicaments.add(this); // Ajoute l'instance à la liste des médicaments
     _medicamentsMap[nameMedoc] =
         this; // Ajoute l'instance au Map avec le nom comme clé
