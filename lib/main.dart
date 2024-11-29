@@ -12,6 +12,8 @@ import 'MyResult.dart';
 import 'Medicaments_Data.dart';
 import 'MyRadioButton.dart';
 import 'MyInputFieldManual.dart';
+import 'CalculationAndDilution.dart';
+
 
 // Fonction principale du programme
 void main() {
@@ -25,6 +27,8 @@ void main() {
         providers: [
           // Fournir une instance de MyVariableToListen à tout le sous-arbre
           ChangeNotifierProvider(create: (_) => MyVariableToListen()),
+          // Fournir une instance de CalculationAndDilution à tout le sous-arbre
+          ChangeNotifierProvider(create: (_) => CalculationAndDilution()),
         ],
         child: const DropdownMenuApp(),
       ),
@@ -53,7 +57,8 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     String selectedRadioValue =
         context.watch<MyVariableToListen>().selectedRadioValue;
 
-    String?  inputManualDosage = context.watch<MyVariableToListen>().inputManualDosage;
+    String? inputManualDosage =
+        context.watch<MyVariableToListen>().inputManualDosage;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Supprimer le bandeau de débogage
@@ -91,7 +96,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                     Column(
                       children: [
                         MyRadioButton(),
-                        SizedBox(height: widgetSpace), // 
+                        SizedBox(height: widgetSpace), //
                         selectedRadioValue == "Dosage prédefini"
                             ? const MyDropDownMenu3()
                             : selectedRadioValue == "Dosage manuel"
@@ -106,7 +111,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   SizedBox(height: widgetSpace), // Espacement
 
                   // Ajouter MyInputField si te(xtDropdown3 n'est pas nul
-                  if (textDropdown3 != null || inputManualDosage!=null)// ) 
+                  if (textDropdown3 != null || inputManualDosage != null) // )
                     const MyInputField()
                   else
                     const SizedBox
@@ -142,18 +147,6 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -217,45 +210,45 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
 //                   SizedBox(height: widgetSpace),
 //                   const MyDropDownMenu1(),
 //                   SizedBox(height: widgetSpace),
-                  
+
 //                   // Remplacement des ternaires par if-else
 //                   if (textDropdown1 != null)
 //                     const MyDropDownMenu2()
 //                   else
 //                     Container(),
-                  
+
 //                   SizedBox(height: widgetSpace),
-                  
+
 //                   if (textDropdown2 != null)
 //                     const MyDropDownMenu3()
 //                   else
 //                     Container(),
-                  
+
 //                   SizedBox(height: widgetSpace),
-                  
+
 //                   if (textDropdown3 != null)
 //                     const MyInputField()
 //                   else
 //                     Container(),
-                  
+
 //                   SizedBox(height: widgetSpace),
-                  
+
 //                   if (poids != null)
 //                     const MyButtonCompute()
 //                   else
 //                     Container(),
-                  
+
 //                   // Remplacement des ternaires pour volume
 //                   if (volume != null)
 //                     const MyResult()
 //                   else
 //                     Container(),
-                  
+
 //                   if (volume != null)
 //                     const SizedBox(height: 1)
 //                   else
 //                     const SizedBox(height: 20),
-                  
+
 //                   const MyResetButton(),
 //                 ],
 //               ),
@@ -266,16 +259,6 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
 //     );
 //   }
 // }
-
-
-
-
-
-
-
-
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_phoenix/flutter_phoenix.dart';

@@ -83,21 +83,6 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     String volume = _formatVolume(result, limiteVolumePipetable);
     double volumeAsDouble =
         double.parse(volume); // Conversion du volume en double
-    // // Interprétation de l'équation et formatage du résultat avec 4 décimales
-    // String volume = equation.interpret().toStringAsFixed(4);
-    // double volumeAsDouble =
-    //     double.parse(volume); // Conversion du volume en double
-
-    // // Ajustement du formatage du volume en fonction de sa taille
-    // if (volumeAsDouble >= 0.001 && volumeAsDouble < limiteVolumePipetable) {
-    //   volume =
-    //       equation.interpret().toStringAsFixed(3); // Formatage avec 3 décimales
-    // }
-
-    // if (volumeAsDouble >= limiteVolumePipetable) {
-    //   volume =
-    //       equation.interpret().toStringAsFixed(2); // Formatage avec 2 décimales
-    // }
 
     double volumeAfterDilution = 0;
     String roundVolumeAfterDilution = "";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'MyVariableToListen.dart';
+import 'CalculationAndDilution.dart';
 
 // Déclare un widget d'entrée personnalisé qui utilise un champ de texte pour entrer des poids.
 class MyInputField extends StatefulWidget {
@@ -37,6 +38,10 @@ class MyInputFieldState extends State<MyInputField> {
               : context.read<MyVariableToListen>().setPoids(
                   null); // Réinitialise le poids s'il n'y a pas de valeur
         },
+        onSubmitted:(poidsValue) {
+          context.read<CalculationAndDilution>().calculateAndUpdate(context);
+        },
+        
         onTap: () {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
           context.read<MyVariableToListen>().setPoids(null);
