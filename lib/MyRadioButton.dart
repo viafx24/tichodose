@@ -5,7 +5,8 @@ import 'MyVariableToListen.dart';
 class MyRadioButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final selectedValue = context.watch<MyVariableToListen>().selectedRadioValue;
+    final selectedValue =
+        context.watch<MyVariableToListen>().selectedRadioValue;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -18,6 +19,10 @@ class MyRadioButton extends StatelessWidget {
               onChanged: (value) {
                 if (value != null) {
                   context.read<MyVariableToListen>().setRadio(value);
+                  context.read<MyVariableToListen>().setInputManualDosage(null);
+                  context.read<MyVariableToListen>().setInputText();
+                  context.read<MyVariableToListen>().setPoids(null);
+                  context.read<MyVariableToListen>().setVolume(null);
                 }
               },
             ),
@@ -33,6 +38,10 @@ class MyRadioButton extends StatelessWidget {
               onChanged: (value) {
                 if (value != null) {
                   context.read<MyVariableToListen>().setRadio(value);
+                  context.read<MyVariableToListen>().setInputManualDosage(null);
+                  context.read<MyVariableToListen>().setInputText();
+                  context.read<MyVariableToListen>().setPoids(null);
+                  context.read<MyVariableToListen>().setVolume(null);
                 }
               },
             ),

@@ -34,12 +34,13 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         inputFormatters: [
           // Limite les entrées aux chiffres et au point
-          FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'))
+          FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d*$'))
         ],
         textAlign:
             TextAlign.center, // Centre le texte à l'intérieur du champ de texte
         decoration: InputDecoration(
-          labelText: "Entrez une valeur en $uniteDosage", // Remplace hintText par labelText
+          labelText:
+              "Entrez une valeur en $uniteDosage", // Remplace hintText par labelText
           labelStyle: const TextStyle(fontSize: 14),
           border: const OutlineInputBorder(),
         ),
@@ -47,6 +48,31 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
           context.read<MyVariableToListen>().setUniteDosage(uniteDosage);
           context.read<MyVariableToListen>().setInputManualDosage(value);
         },
+        onTap: () {
+          // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
+
+          context.read<MyVariableToListen>().setInputManualDosage(null);
+          context.read<MyVariableToListen>().setInputText();
+          context.read<MyVariableToListen>().setPoids(null);
+          context.read<MyVariableToListen>().setVolume(null);
+        },
+        onTapOutside: ((event) {
+          // Lorsque le champ de texte perd le focus, dé-focus le champ de texte
+          String currentValue = controller.text;
+
+          // Valide si la valeur est un nombre valide
+          bool isValidInput = RegExp(r'^\d+\.?\d*$').hasMatch(currentValue);
+
+          if (isValidInput) {
+            // Si la valeur est valide, mettez à jour le contexte
+            context.read<MyVariableToListen>().setUniteDosage(uniteDosage);
+            context
+                .read<MyVariableToListen>()
+                .setInputManualDosage(currentValue);
+          }
+
+          FocusScope.of(context).unfocus();
+        }),
       ),
     );
   }

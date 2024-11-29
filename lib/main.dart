@@ -89,14 +89,14 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                     const SizedBox
                         .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
-                  //SizedBox(height: widgetSpace), // Espacement
+                  SizedBox(height: widgetSpaceSmall), // Espacement
 
                   // Ajouter MyDropDownMenu3 si textDropdown2 n'est pas nul
                   if (textDropdown2 != null)
                     Column(
                       children: [
                         MyRadioButton(),
-                        SizedBox(height: widgetSpace), //
+                        SizedBox(height: widgetSpaceSmall),  //
                         selectedRadioValue == "Dosage prédefini"
                             ? const MyDropDownMenu3()
                             : selectedRadioValue == "Dosage manuel"
@@ -119,12 +119,12 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
 
                   SizedBox(height: widgetSpace), // Espacement
 
-                  // Ajouter MyButtonCompute si poids n'est pas nul
-                  if (poids != null)
-                    const MyButtonCompute()
-                  else
-                    const SizedBox
-                        .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
+                  // // Ajouter MyButtonCompute si poids n'est pas nul
+                  // if (poids != null)
+                  //   const MyButtonCompute()
+                  // else
+                  //   const SizedBox
+                  //       .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter MyResult si volume n'est pas nul
                   if (volume != null)

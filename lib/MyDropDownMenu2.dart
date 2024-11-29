@@ -58,6 +58,8 @@ class _MyDropDownMenu2State extends State<MyDropDownMenu2> {
         context.read<MyVariableToListen>().settextDropdown3(null);
         context.read<MyVariableToListen>().setPoids(null);
         context.read<MyVariableToListen>().setVolume(null);
+        context.read<MyVariableToListen>().setInputManualDosage(null);
+        context.read<MyVariableToListen>().setInputText();
       },
 
       // Génère les entrées du menu déroulant à partir des noms de médicaments filtrés

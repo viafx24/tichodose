@@ -58,6 +58,7 @@ class _MyDropDownMenu3State extends State<MyDropDownMenu3> {
         // Réinitialise le poids et le volume
         context.read<MyVariableToListen>().setPoids(null);
         context.read<MyVariableToListen>().setVolume(null);
+
         // Si le contrôleur de texte d'entrée est non nul, met à jour la valeur d'entrée
         if (context.read<MyVariableToListen>().inputTextController != null) {
           context.read<MyVariableToListen>().setInputText();

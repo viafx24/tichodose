@@ -22,9 +22,9 @@ class CalculationAndDilution with ChangeNotifier {
 
   void calculateAndUpdate(BuildContext context) {
     // Récupération des valeurs d'état à partir du Provider
-    String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
-    String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
-    int? poids = context.watch<MyVariableToListen>().poids;
+    String? textDropdown2 = context.read<MyVariableToListen>().textDropdown2;
+    String? textDropdown3 = context.read<MyVariableToListen>().textDropdown3;
+    int? poids = context.read<MyVariableToListen>().poids;
 
     // Récupération de la carte des médicaments
     Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
@@ -41,7 +41,7 @@ class CalculationAndDilution with ChangeNotifier {
     if (textDropdown3 != null) {
       posologie = myMapMedocs[textDropdown2]!.map[textDropdown3];
     } else {
-      posologie = context.watch<MyVariableToListen>().inputManualDosage;
+      posologie = context.read<MyVariableToListen>().inputManualDosage;
     }
 
     String? equation = myMapMedocs[textDropdown2]!.nameEquation;

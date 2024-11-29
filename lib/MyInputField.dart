@@ -27,8 +27,18 @@ class MyInputFieldState extends State<MyInputField> {
       child: TextField(
         controller:
             inputTextController, // Utilise le contrôleur de texte fourni par MyVariableToListen
-        onChanged: (poidsValue) {
-          // Lorsqu'il y a un changement dans le champ de texte, met à jour le poids
+        // onChanged: (poidsValue) {
+        //   // Lorsqu'il y a un changement dans le champ de texte, met à jour le poids
+        //   context
+        //       .read<MyVariableToListen>()
+        //       .setVolume(null); // Réinitialise le volume
+        //   poidsValue.characters.isNotEmpty
+        //       ? context.read<MyVariableToListen>().setPoids(
+        //           int.parse(poidsValue)) // Définit le poids s'il y a une valeur
+        //       : context.read<MyVariableToListen>().setPoids(
+        //           null); // Réinitialise le poids s'il n'y a pas de valeur
+        // },
+        onSubmitted: (poidsValue) {
           context
               .read<MyVariableToListen>()
               .setVolume(null); // Réinitialise le volume
@@ -37,19 +47,33 @@ class MyInputFieldState extends State<MyInputField> {
                   int.parse(poidsValue)) // Définit le poids s'il y a une valeur
               : context.read<MyVariableToListen>().setPoids(
                   null); // Réinitialise le poids s'il n'y a pas de valeur
-        },
-        onSubmitted:(poidsValue) {
+
           context.read<CalculationAndDilution>().calculateAndUpdate(context);
         },
-        
+
         onTap: () {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
           context.read<MyVariableToListen>().setPoids(null);
           context.read<MyVariableToListen>().setVolume(null);
-      
+          context.read<MyVariableToListen>().setInputText();
         },
         onTapOutside: ((event) {
           // Lorsque le champ de texte perd le focus, dé-focus le champ de texte
+          String poidsValue = inputTextController!.text;
+
+          if (RegExp(r'^\d+$').hasMatch(poidsValue)) {
+            context
+                .read<MyVariableToListen>()
+                .setVolume(null); // Réinitialise le volume
+            poidsValue.characters.isNotEmpty
+                ? context.read<MyVariableToListen>().setPoids(int.parse(
+                    poidsValue)) // Définit le poids s'il y a une valeur
+                : context.read<MyVariableToListen>().setPoids(
+                    null); // Réinitialise le poids s'il n'y a pas de valeur
+
+            context.read<CalculationAndDilution>().calculateAndUpdate(context);
+          }
+
           FocusScope.of(context).unfocus();
         }),
         textAlign:

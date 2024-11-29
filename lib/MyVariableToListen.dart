@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Déclaration de variables globales pour les dimensions des widgets et un booléen
 double width = 300;
 double widgetSpace = 20;
+double widgetSpaceSmall = 15;
 bool myBool = false;
 
 double poidsProtectionPassereaux = 35;
@@ -166,7 +167,7 @@ class MyVariableToListen with ChangeNotifier {
   }
 
   // Méthode pour définir la valeur (sans "mg/kg")
-  void setInputManualDosage(String value) {
+  void setInputManualDosage(String? value) {
     // Tente de convertir la valeur en double et met à jour l'état
    // _inputManualDosage = double.tryParse(value);
     _inputManualDosage = value;
