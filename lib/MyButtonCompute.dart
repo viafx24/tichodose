@@ -20,6 +20,9 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     // Récupération des valeurs d'état à partir du Provider
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
     String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
+    
+    
+
     int? poids = context.watch<MyVariableToListen>().poids;
 
     // Récupération de la carte des médicaments
@@ -30,14 +33,29 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     String? mode = myMapMedocs[textDropdown2]?.nameMode;
     // Récupération des infos supplementaires
     String? info = myMapMedocs[textDropdown2]?.nameInfo;
+
+    String? concentrationSolution = myMapMedocs[textDropdown2]?.nameConcentrationSolution;
     // Récupération de l'équation de calcul à partir de la carte de médicaments
-    String? equation = myMapMedocs[textDropdown2]!.map[textDropdown3];
+    String? posologie;
+    if (textDropdown3 == null) {
+      posologie = myMapMedocs[textDropdown2]!.map[textDropdown3];
+    } else {
+       posologie = context.watch<MyVariableToListen>().inputManualDosage;
+    }
+
+    String? equation = myMapMedocs[textDropdown2]!.nameEquation;
 
     // Remplacement de la variable "poids" dans l'équation par la valeur du poids
-    equation = equation?.replaceAll("poids", poids.toString());
+    equation = equation.replaceAll("poids", poids.toString());
+
+       // Remplacement de la variable "posologie" dans l'équation par la valeur de posologie
+    equation = equation.replaceAll("posologie", posologie!);
+
+           // Remplacement de la variable "posologie" dans l'équation par la valeur de posologie
+    equation = equation.replaceAll("concentrationSolution", concentrationSolution!);
 
     // Interprétation de l'équation et formatage du résultat avec 4 décimales
-    String volume = equation!.interpret().toStringAsFixed(4);
+    String volume = equation.interpret().toStringAsFixed(4);
     double volumeAsDouble =
         double.parse(volume); // Conversion du volume en double
 

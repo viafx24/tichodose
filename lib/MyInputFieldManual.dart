@@ -36,8 +36,10 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
           // Limite les entrées aux chiffres et au point
           FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'))
         ],
+        textAlign:
+            TextAlign.center, // Centre le texte à l'intérieur du champ de texte
         decoration: InputDecoration(
-          hintText: "Entrez une valeur en $uniteDosage",
+          labelText: "Entrez une valeur en $uniteDosage", // Remplace hintText par labelText
           labelStyle: const TextStyle(fontSize: 14),
           border: const OutlineInputBorder(),
         ),

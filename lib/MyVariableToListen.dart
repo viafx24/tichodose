@@ -35,7 +35,7 @@ class MyVariableToListen with ChangeNotifier {
 
   String _selectedRadioValue = "Dosage prédefini"; // Valeur initiale
 
-  double? _inputManualDosage;
+  String? _inputManualDosage;
 
   // Contrôleur pour le champ de texte
   TextEditingController? _inputTextController = TextEditingController();
@@ -64,7 +64,7 @@ class MyVariableToListen with ChangeNotifier {
 
   String get selectedRadioValue => _selectedRadioValue;
 
-  double? get inputManualDosage => _inputManualDosage;
+  String? get inputManualDosage => _inputManualDosage;
 
   TextEditingController? get inputTextController => _inputTextController;
 
@@ -168,7 +168,8 @@ class MyVariableToListen with ChangeNotifier {
   // Méthode pour définir la valeur (sans "mg/kg")
   void setInputManualDosage(String value) {
     // Tente de convertir la valeur en double et met à jour l'état
-    _inputManualDosage = double.tryParse(value);
+   // _inputManualDosage = double.tryParse(value);
+    _inputManualDosage = value;
     notifyListeners(); // Notifie les widgets abonnés à cette variable
   }
 

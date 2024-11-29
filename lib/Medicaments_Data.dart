@@ -30,9 +30,9 @@ void initializeMedicaments() {
   //   'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
   // });
 
-  // MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire","VO","Homéopathie (antalgique)","2 fois par jour (minimum 1 semaine)" ,"ml/kg",{
-  //   'Mammifère/oiseau (1ml/kg)': 'poids/1000',
-  // });
+  MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire","VO","Homéopathie (antalgique)","2 fois par jour (minimum 1 semaine)" ,"ml/kg","inconnue","poids*posologie/1000",{
+    'Mammifère/oiseau (1ml/kg)': '1',
+  });
 
   // MyMedicament meloxidolor =
   //     MyMedicament("Meloxidolor (SC)", "Anti-inflammatoire","SC","Antalgique, anti-inflammatoire ; attention au risque de confusion avec le melox/metacam.","1 fois par jour (pendant 3 à 7 jours)","mg/kg", "5","(poids*(posologie/1000))/concentrationSolution",{
