@@ -31,11 +31,11 @@ class MyInputFieldState extends State<MyInputField> {
           context
               .read<MyVariableToListen>()
               .setVolume(null); // Réinitialise le volume
-          // poidsValue.characters.isNotEmpty
-          //     ? context.read<MyVariableToListen>().setPoids(
-          //         int.parse(poidsValue)) // Définit le poids s'il y a une valeur
-          //     : context.read<MyVariableToListen>().setPoids(
-          //         null); // Réinitialise le poids s'il n'y a pas de valeur
+          poidsValue.characters.isNotEmpty
+              ? context.read<MyVariableToListen>().setPoids(
+                  int.parse(poidsValue)) // Définit le poids s'il y a une valeur
+              : context.read<MyVariableToListen>().setPoids(
+                  null); // Réinitialise le poids s'il n'y a pas de valeur
         },
         onTap: () {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume

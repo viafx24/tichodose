@@ -53,7 +53,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     String selectedRadioValue =
         context.watch<MyVariableToListen>().selectedRadioValue;
 
-    double?  inputManualDosage = context.watch<MyVariableToListen>().inputManualDosage;
+    String?  inputManualDosage = context.watch<MyVariableToListen>().inputManualDosage;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Supprimer le bandeau de débogage

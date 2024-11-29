@@ -15,6 +15,26 @@ class MyButtonCompute extends StatefulWidget {
 
 // État associé à MyButtonCompute
 class _MyButtonComputeState extends State<MyButtonCompute> {
+
+// Fonction privée pour formater le volume en fonction de la taille
+  String _formatVolume(num value, double limiteVolumePipetable) {
+    double roundedValue = (value * 10000).round() / 10000;
+    print('roundedValue: $roundedValue, type: ${roundedValue.runtimeType}');
+
+    // Si le volume est inférieur à limiteVolumePipetable et supérieur ou égal à 0.001, on le formate avec 4, 3 ou 2 décimales
+    if (roundedValue >= 0.001 && roundedValue < limiteVolumePipetable) {
+      return roundedValue.toStringAsFixed(3);
+    } else if (roundedValue >= limiteVolumePipetable && roundedValue <= 1) {
+      return roundedValue.toStringAsFixed(2); // Formattage avec 2 décimales
+    } else if (roundedValue > 1) {
+      return roundedValue.toStringAsFixed(1); // Formattage avec 1 décimale pour les valeurs supérieures à 1
+    } else {
+      return roundedValue.toStringAsFixed(4); // Formatage avec 4 décimales par défaut
+    }
+
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     // Récupération des valeurs d'état à partir du Provider
@@ -37,7 +57,7 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
     String? concentrationSolution = myMapMedocs[textDropdown2]?.nameConcentrationSolution;
     // Récupération de l'équation de calcul à partir de la carte de médicaments
     String? posologie;
-    if (textDropdown3 == null) {
+    if (textDropdown3 != null) {
       posologie = myMapMedocs[textDropdown2]!.map[textDropdown3];
     } else {
        posologie = context.watch<MyVariableToListen>().inputManualDosage;
@@ -54,21 +74,30 @@ class _MyButtonComputeState extends State<MyButtonCompute> {
            // Remplacement de la variable "posologie" dans l'équation par la valeur de posologie
     equation = equation.replaceAll("concentrationSolution", concentrationSolution!);
 
-    // Interprétation de l'équation et formatage du résultat avec 4 décimales
-    String volume = equation.interpret().toStringAsFixed(4);
+
+     // Interprétation de l'équation
+    num result = equation.interpret();
+    //double limiteVolumePipetable = 1.0;
+
+    // Appel à la fonction privée pour formater le volume
+    String volume = _formatVolume(result, limiteVolumePipetable);
     double volumeAsDouble =
         double.parse(volume); // Conversion du volume en double
+    // // Interprétation de l'équation et formatage du résultat avec 4 décimales
+    // String volume = equation.interpret().toStringAsFixed(4);
+    // double volumeAsDouble =
+    //     double.parse(volume); // Conversion du volume en double
 
-    // Ajustement du formatage du volume en fonction de sa taille
-    if (volumeAsDouble >= 0.001 && volumeAsDouble < limiteVolumePipetable) {
-      volume =
-          equation.interpret().toStringAsFixed(3); // Formatage avec 3 décimales
-    }
+    // // Ajustement du formatage du volume en fonction de sa taille
+    // if (volumeAsDouble >= 0.001 && volumeAsDouble < limiteVolumePipetable) {
+    //   volume =
+    //       equation.interpret().toStringAsFixed(3); // Formatage avec 3 décimales
+    // }
 
-    if (volumeAsDouble >= limiteVolumePipetable) {
-      volume =
-          equation.interpret().toStringAsFixed(2); // Formatage avec 2 décimales
-    }
+    // if (volumeAsDouble >= limiteVolumePipetable) {
+    //   volume =
+    //       equation.interpret().toStringAsFixed(2); // Formatage avec 2 décimales
+    // }
 
     double volumeAfterDilution = 0;
     String roundVolumeAfterDilution = "";
