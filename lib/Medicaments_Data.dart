@@ -16,19 +16,19 @@ void initializeMedicaments() {
     'Chevreuil (0.5mg/kg)': '0.5',
   });
 
-  // MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire","SC ou IM","Etat de choc, troubles neurologiques; Hérisson : 4 mg/kg le 1er jour puis 2mg/kg.","1 fois par jour (de 1 à 5 jours)","mg/kg","2","(poids*(posologie/1000))/concentrationSolution", {
-  //   'Oiseau pleine dose (4mg/kg)': 'poids/500',
-  //   'Oiseau demi dose (2mg/kg)': 'poids/500/2',
-  //   'Gros rapace (1mg/kg)': 'poids/500/4',
-  //   'Gros rapace Neuro++ (4mg/kg)': 'poids/500',
-  //   'Hérisson pleine dose (4mg/kg)': 'poids*4/1000/2',
-  //   'Hérisson demi dose (2mg/kg)': 'poids*2/1000/2',
-  //   'Rongeur/Lapin dose min (0.5mg/kg)': 'poids*0.5/1000/2',
-  //   'Rongeur/Lapin dose max (2mg/kg)': 'poids*2/1000/2',
-  //   'Chevreuil (3ml/100kg)': 'poids*3/100000',
-  //   'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10000',
-  //   'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
-  // });
+  MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire","SC ou IM","Etat de choc, troubles neurologiques; Hérisson : 4 mg/kg le 1er jour puis 2mg/kg.","1 fois par jour (de 1 à 5 jours)","mg/kg","2","(poids*(posologie/1000))/concentrationSolution", {
+    'Oiseau pleine dose (4mg/kg)': 'poids/500',
+    'Oiseau demi dose (2mg/kg)': 'poids/500/2',
+    'Gros rapace (1mg/kg)': 'poids/500/4',
+    'Gros rapace Neuro++ (4mg/kg)': 'poids/500',
+    'Hérisson pleine dose (4mg/kg)': 'poids*4/1000/2',
+    'Hérisson demi dose (2mg/kg)': 'poids*2/1000/2',
+    'Rongeur/Lapin dose min (0.5mg/kg)': 'poids*0.5/1000/2',
+    'Rongeur/Lapin dose max (2mg/kg)': 'poids*2/1000/2',
+    'Chevreuil (3ml/100kg)': 'poids*3/100000',
+    'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10000',
+    'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
+  });
 
   MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire","VO","Homéopathie (antalgique)","2 fois par jour (minimum 1 semaine)" ,"ml/kg","inconnue","poids*posologie/1000",{
     'Mammifère/oiseau (1ml/kg)': '1',
