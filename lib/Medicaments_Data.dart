@@ -10,85 +10,93 @@ void initializeMedicaments() {
     'Lapin dose min (0.3mg/kg)': '0.3',
     'Lapin dose max (1mg/kg)': '1',
     'Rongeur (0.5mg/kg)': '0.5',
-    'Chauve-Souris (0.002mg/g)': '2',
+    //'Chauve-Souris (0.002mg/g)': '2',
+    'Chauve-Souris (2mg/kg)': '2',
     'Renard demi dose (0.1mg/kg)': '0.1',
     'Renard pleine dose (0.2mg/kg)': '0.2',
     'Chevreuil (0.5mg/kg)': '0.5',
   });
 
   MyMedicament dexadreson = MyMedicament("Dexadreson", "Anti-inflammatoire","SC ou IM","Etat de choc, troubles neurologiques; Hérisson : 4 mg/kg le 1er jour puis 2mg/kg.","1 fois par jour (de 1 à 5 jours)","mg/kg","2","(poids*(posologie/1000))/concentrationSolution", {
-    'Oiseau pleine dose (4mg/kg)': 'poids/500',
-    'Oiseau demi dose (2mg/kg)': 'poids/500/2',
-    'Gros rapace (1mg/kg)': 'poids/500/4',
-    'Gros rapace Neuro++ (4mg/kg)': 'poids/500',
-    'Hérisson pleine dose (4mg/kg)': 'poids*4/1000/2',
-    'Hérisson demi dose (2mg/kg)': 'poids*2/1000/2',
-    'Rongeur/Lapin dose min (0.5mg/kg)': 'poids*0.5/1000/2',
-    'Rongeur/Lapin dose max (2mg/kg)': 'poids*2/1000/2',
-    'Chevreuil (3ml/100kg)': 'poids*3/100000',
-    'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10000',
-    'Chauve-Souris (0.003mg/g)': 'poids*0.003/2',
+    'Oiseau pleine dose (4mg/kg)': '4',
+    'Oiseau demi dose (2mg/kg)': '5',
+    'Gros rapace (1mg/kg)': '1',
+    'Gros rapace Neuro++ (4mg/kg)': '4',
+    'Hérisson pleine dose (4mg/kg)': '4',
+    'Hérisson demi dose (2mg/kg)': '2',
+    'Rongeur/Lapin dose min (0.5mg/kg)': '0.5',
+    'Rongeur/Lapin dose max (2mg/kg)': '2',
+    'Chevreuil (0.06mg/kg)':'0.06',
+    'Blaireau/Renard (0.1mg/kg)':'0.1',
+    'Chauve-Souris (3mg/kg)': '3',
+    // 'Chevreuil (3ml/100kg)': 'poids*3/100000',
+    // 'Blaireau/Renard (0.5ml/10kg)': 'poids*0.5/10000',
+    //'Chauve-Souris (0.003mg/g)': '3',
   });
 
   MyMedicament traumasedyl = MyMedicament("Traumasedyl", "Anti-inflammatoire","VO","Homéopathie (antalgique)","2 fois par jour (minimum 1 semaine)" ,"ml/kg","inconnue","poids*posologie/1000",{
     'Mammifère/oiseau (1ml/kg)': '1',
   });
 
-  // MyMedicament meloxidolor =
-  //     MyMedicament("Meloxidolor (SC)", "Anti-inflammatoire","SC","Antalgique, anti-inflammatoire ; attention au risque de confusion avec le melox/metacam.","1 fois par jour (pendant 3 à 7 jours)","mg/kg", "5","(poids*(posologie/1000))/concentrationSolution",{
-  //   'Hérisson (0.2mg/kg)': 'poids*0.2/1000/5',
-  //   'Lapin dose min (0.3mg/kg)': 'poids*0.3/1000/5',
-  //   'Lapin dose max (1mg/kg)': 'poids*1/1000/5',
-  //   'Rongeur (0.5mg/kg)': 'poids*0.5/1000/5',
-  //   'Renard pleine dose (0.2mg/kg)': 'poids*0.2/1000/5',
-  //   'Renard demi dose (0.1mg/kg)': 'poids*0.1/1000/5',
-  //   'Chevreuil (0.5mg/kg)': 'poids*0.5/1000/5',
-  // });
+  MyMedicament meloxidolor =
+      MyMedicament("Meloxidolor (SC)", "Anti-inflammatoire","SC","Antalgique, anti-inflammatoire ; attention au risque de confusion avec le melox/metacam.","1 fois par jour (pendant 3 à 7 jours)","mg/kg", "5","(poids*(posologie/1000))/concentrationSolution",{
+    'Hérisson (0.2mg/kg)': '0.2',
+    'Lapin dose min (0.3mg/kg)': '0.3',
+    'Lapin dose max (1mg/kg)': '1',
+    'Rongeur (0.5mg/kg)': '0.5',
+    'Renard pleine dose (0.2mg/kg)': '0.2',
+    'Renard demi dose (0.1mg/kg)': '0.1',
+    'Chevreuil (0.5mg/kg)': '0.5',
+  });
 
-  // MyMedicament augmentin = MyMedicament("Augmentin", "Antibiotique","VO","Large spectre : troubles respiratoires, plaies, mauvais état général. Attention : jamais en VO pour les rongeurs. Amoxicilline + acide clavulanique","2 fois par jour pendant 7 jours","mg/kg","112.5","(poids*(posologie/1000))/concentrationSolution", {
-  //   'Oiseau (1ml/kg)': 'poids/1000',
-  //   'Hérisson (40 mg/kg)': 'poids*40/1000/112.5',
-  //   'Petit carnivore (10 mg/kg)': 'poids*10/1000/112.5',
-  //   'Chauve-Souris (0,005 mg/g)': 'poids*0.005/112.5',
-  // });
+  MyMedicament augmentin = MyMedicament("Augmentin", "Antibiotique","VO","Large spectre : troubles respiratoires, plaies, mauvais état général. Attention : jamais en VO pour les rongeurs. Amoxicilline (100mg/ml) + acide clavulanique (12.5mg/ml)","2 fois par jour pendant 7 jours","mg/kg","112.5","(poids*(posologie/1000))/concentrationSolution", {
+    //'Oiseau (1ml/kg)': 'poids/1000',
+    'Oiseau (112.5mg/kg)': '112.5',
+    'Hérisson (40mg/kg)': '40',
+    'Petit carnivore (10mg/kg)': '10',
+    'Chauve-Souris (5mg/kg)': '5',
+    //'Chauve-Souris (0,005 mg/g)': '5',
+  });
 
-  // MyMedicament zodon = MyMedicament("Zodon liquide", "Antibiotique","VO","molecule = clindamycine","2 fois par jour.","ml/kg", {
-  //   'Oiseau (50mg/kg)': 'poids/500',
-  // });
+  MyMedicament zodon = MyMedicament("Zodon liquide", "Antibiotique","VO","molecule = clindamycine (25mg/ml)","2 fois par jour.","ml/kg","25","(poids*(posologie/1000))/concentrationSolution", {
+    'Oiseau (50mg/kg)': '50',
+  });
 
-  // MyMedicament bactrim = MyMedicament("Bactrim", "Antibiotique","VO","R.A.S" ,"2 fois par jour", "ml/kg","1","(poids*(posologie/1000))/concentrationSolution",{
-  //   'Oiseau (0.8ml/kg)': 'poids*0.8/1000',
-  // });
+  MyMedicament bactrim = MyMedicament("Bactrim", "Antibiotique","VO","molecules: Sulfaméthoxazole(40 mg/ml ?)/ Triméthoprime(8 mg/ml?)." ,"2 fois par jour", "ml/kg","n/a","poids*posologie/1000",{
+    'Oiseau (0.8ml/kg)': '0.8',
+  });
 
-  // MyMedicament adjusol = MyMedicament("Adjusol", "Antibiotique","VO","Large spectre (Troubles digestifs + respiratoires + contre salmonelles et coccidies); Sulfadiazine + triméthoprime", "1 à 2 fois par jour Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes).","mg/kg","100","(poids*(posologie/1000))/concentrationSolution", {
-  //   'Oiseau (0.3ml/kg)': 'poids*0.3/1000',
-  //   'Hérisson (30mg/kg)': 'poids*30/1000/100',
-  //   'Ecureuil/Rongeur dose min (15mg/kg)': 'poids*15/1000/100',
-  //   'Ecureuil/Rongeur dose max (30mg/kg)': 'poids*30/1000/100',
-  // });
+  MyMedicament adjusol = MyMedicament("Adjusol", "Antibiotique","VO","Large spectre (Troubles digestifs + respiratoires + contre salmonelles et coccidies); Sulfadiazine + triméthoprime", "1 à 2 fois par jour Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes).","mg/kg","100","(poids*(posologie/1000))/concentrationSolution", {
+    //'Oiseau (0.3ml/kg)': 'poids*0.3/1000',
+    'Oiseau (30mg/kg)': '30',
+    'Hérisson (30mg/kg)': '30',
+    'Ecureuil/Rongeur dose min (15mg/kg)': '15',
+    'Ecureuil/Rongeur dose max (30mg/kg)': '30',
+  });
 
-  // MyMedicament zytromax = MyMedicament("Zytromax", "Antibiotique","VO","R.A.S","1 fois par jour.","ml/kg", {
-  //   'Oiseau (1ml/kg)': 'poids/1000',
-  // });
+  MyMedicament zytromax = MyMedicament("Zytromax", "Antibiotique","VO","molecule: Azithromycine (40mg/ml) ","1 fois par jour.","ml/kg","n/a","poids*posologie/1000", {
+    'Oiseau (1ml/kg)': '1',
+  });
 
-  // MyMedicament septotryl = MyMedicament("Septotryl", "Antibiotique","SC ou IM","Large spectre (troubles digestifs + respiratoires + contre salmonelles et coccidies);sulfaméthoxypyridazine + triméthoprime","2 fois par jours pendant 7 jours.","mg/kg","240","(poids*(posologie/1000))/concentrationSolution", {
-  //   'Hérisson (30mg/kg)': 'poids*30/1000/240',
-  //   'Rongeur dose min (15mg/kg)': 'poids*15/1000/240',
-  //   'Rongeur dose max (30mg/kg)': 'poids*30/1000/240',
-  // });
+  MyMedicament septotryl = MyMedicament("Septotryl", "Antibiotique","SC ou IM","Large spectre (troubles digestifs + respiratoires + contre salmonelles et coccidies);sulfaméthoxypyridazine(200mg/kg) + triméthoprime(40mg/kg)","2 fois par jours pendant 7 jours.","mg/kg","240","(poids*(posologie/1000))/concentrationSolution", {
+    'Hérisson (30mg/kg)': '30',
+    'Rongeur dose min (15mg/kg)': '15',
+    'Rongeur dose max (30mg/kg)': '30',
+  });
 
-  // MyMedicament oxytetracycline =
-  //     MyMedicament("Oxytetracycline", "Antibiotique","VO ou SC","Large spectre (plaies, mauvais état général, encéphalite)", "Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes)","mg/kg","50","(poids*(posologie/1000))/concentrationSolution",{
-  //   'Oiseau (1ml/kg)': 'poids/1000',
-  //   'Hérisson (50 mg/kg)': 'poids*50/1000/50',
-  //   'Petit carnivore dose min (5mg/kg)': 'poids*5/1000/50',
-  //   'Petit carnivore dose max (10mg/kg)': 'poids*10/1000/50',
-  //   'Renard (10mg/kg)': 'poids*10/1000/50',
-  //   'Blaireau (5mg/kg)': 'poids*5/1000/50',
-  //   'Rongeur (30mg/kg)': 'poids*30/1000/50',
-  //   'Lapin VO (50mg/kg) ': 'poids*50/1000/50',
-  //   'Chevreuil (2ml/10kg)': 'poids*2/10000',
-  // });
+  MyMedicament oxytetracycline =
+      MyMedicament("Oxytetracycline", "Antibiotique","VO ou SC","Large spectre (plaies, mauvais état général, encéphalite); molecule: oxytétracycline (50mg/ml)", "Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes)","mg/kg","50","(poids*(posologie/1000))/concentrationSolution",{
+    'Oiseau (50mg/kg)': '50',
+    'Hérisson (50 mg/kg)': '50',
+    'Petit carnivore dose min (5mg/kg)': '5',
+    'Petit carnivore dose max (10mg/kg)': '10',
+    'Renard (10mg/kg)': '10',
+    'Blaireau (5mg/kg)': '5',
+    'Rongeur (30mg/kg)': '30',
+    'Lapin VO (50mg/kg) ': '50',
+    'Chevreuil (10mg/kg)': '10'
+    //'Chevreuil (2ml/10kg)': 'poids*2/10000',
+  });
 
   // MyMedicament shotapen = MyMedicament("Shotapen", "Antibiotique","SC ou IM","Large spectre et longue action (Pour plaie); Pénicilline; Attention produit épais = injecter avec aiguille verte + bien secouer le produit.","1 fois par 72 heures","ml/kg", {
   //   'Gros mammifère/carnivore (0.1ml/kg)': 'poids*0.1/1000',

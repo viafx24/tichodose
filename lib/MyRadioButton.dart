@@ -23,6 +23,7 @@ class MyRadioButton extends StatelessWidget {
                   context.read<MyVariableToListen>().setInputText();
                   context.read<MyVariableToListen>().setPoids(null);
                   context.read<MyVariableToListen>().setVolume(null);
+                  context.read<MyVariableToListen>().settextDropdown3(null); // Réinitialise la sélection du troisième menu déroulant
                 }
               },
             ),
@@ -42,6 +43,7 @@ class MyRadioButton extends StatelessWidget {
                   context.read<MyVariableToListen>().setInputText();
                   context.read<MyVariableToListen>().setPoids(null);
                   context.read<MyVariableToListen>().setVolume(null);
+                  context.read<MyVariableToListen>().settextDropdown3(null);
                 }
               },
             ),
