@@ -35,7 +35,6 @@ class _MyResultState extends State<MyResult> {
     String? volumeNaclDilution =
         context.watch<MyVariableToListen>().volumeNaclDilution;
 
-
     String? selectedValue =
         context.watch<MyVariableToListen>().selectedRadioValue;
 
@@ -50,6 +49,8 @@ class _MyResultState extends State<MyResult> {
     String? dureeTraitement = myMapMedocs[textDropdown2]?.dureeTraitement;
 
     String? uniteDosage = myMapMedocs[textDropdown2]?.nameUniteDosage;
+
+    String? infoImportante = myMapMedocs[textDropdown2]?.nameInfoImportante;
 
     return Padding(
       padding: const EdgeInsets.all(
@@ -73,28 +74,26 @@ class _MyResultState extends State<MyResult> {
                       style: const TextStyle(
                           fontWeight: FontWeight
                               .bold)), // Met en gras le texte de textDropdown2
-                  if (selectedValue == 'Dosage prédefini')...[
-                  const TextSpan(text: ' à prélever pour un(e) '),
-                  TextSpan(
-                      text: '$textDropdown3',
-                      style: const TextStyle(
-                          fontWeight: FontWeight
-                              .bold)), // Met en gras le texte de textDropdown3
+                  if (selectedValue == 'Dosage prédefini') ...[
+                    const TextSpan(text: ' à prélever pour un(e) '),
+                    TextSpan(
+                        text: '$textDropdown3',
+                        style: const TextStyle(
+                            fontWeight: FontWeight
+                                .bold)), // Met en gras le texte de textDropdown3
                   ],
-                  if (selectedValue == 'Dosage manuel')...[
-                  const TextSpan(text: ' à prélever pour un dosage de '),
-                  TextSpan(
-                      text: '$posologie',
-                      style: const TextStyle(
-                          fontWeight: FontWeight
-                              .bold)), // Met en gras le texte de textDropdown3
-                  TextSpan(
-                      text: '$uniteDosage',
-                      style: const TextStyle(
-                          fontWeight: FontWeight
-                              .bold)),
+                  if (selectedValue == 'Dosage manuel') ...[
+                    const TextSpan(text: ' à prélever pour un dosage de '),
+                    TextSpan(
+                        text: '$posologie',
+                        style: const TextStyle(
+                            fontWeight: FontWeight
+                                .bold)), // Met en gras le texte de textDropdown3
+                    TextSpan(
+                        text: '$uniteDosage',
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
 
-                  const TextSpan(text: ' sur un animal'),
+                    const TextSpan(text: ' sur un animal'),
                   ],
 
                   const TextSpan(text: ' pesant '),
@@ -151,10 +150,14 @@ class _MyResultState extends State<MyResult> {
                       style: const TextStyle(
                           fontWeight: FontWeight
                               .bold)), // Met en gras le texte de textDropdown2
+                              const TextSpan(text: ". "),
+                  TextSpan(
+                      text: '$infoImportante',
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                   if (volumeAsDouble != null &&
                       volumeAsDouble >= limiteVolumePipetable)
                     const TextSpan(
-                      text: ". Il n'y a PAS de dilution nécessaire.",
+                      text: " Il n'y a PAS de dilution nécessaire.",
                     )
                   else if (volumeAsDouble != null &&
                       volumeAsDouble < limiteVolumePipetable &&
@@ -166,11 +169,11 @@ class _MyResultState extends State<MyResult> {
                       !mode.contains("SC"))
                     const TextSpan(
                       text:
-                          ". Il n'y a PAS de dilution nécessaire MAIS suivez les instructions ci-dessous.",
+                          " Il n'y a PAS de dilution nécessaire MAIS suivez les instructions ci-dessous.",
                     )
                   else
                     const TextSpan(
-                      text: ". Suivez les instructions ci-dessous.",
+                      text: " Suivez les instructions ci-dessous.",
                     )
                 ],
               ),
