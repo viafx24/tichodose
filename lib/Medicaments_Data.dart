@@ -236,10 +236,6 @@ void initializeMedicaments() {
     //'Chauve-Souris (0.005mg/g)': 'poids*0.005/25',
   });
 
-  // MyMedicament virbamec = MyMedicament("Virbamec", "Antiparasitaire","SC","Parasites externes, gale, myiases, Nématodes intestinaux ;" {
-  //   'Gros oiseau (0.05ml/kg)': 'poids*0.05/1000',
-  // });
-
   MyMedicament flagyl = MyMedicament(
       "Flagyl",
       "Antiparasitaire",
@@ -308,19 +304,19 @@ void initializeMedicaments() {
     'oiseaux (20mg/ml)': '20'
   });
 
-  MyMedicament virbamec = MyMedicament(
-    "Virbamec",
-    "Antiparasitaire",
-    "SC ou transcutanée",
-    "Parasites externes, gale, myiases, nématodes intestinaux; molécule: ivermectine (10mg/ml) MAIS il faut préléver le volume indiqué dans une solution diluée 10 fois (1mg/ml). Pour cela, prélever 0.1 ml de virbamec puis 0.9 ml de NaCl. Passereau: 1 goutte en transcutanée.", 
-    "Gale: 1 fois par semaine en SC (pendant 3 semaines); Parasites externes : 1 fois (transcutanée ou SC). Passereaux: renouvelable 1 fois tous les 15 jours.",
-    "ml/kg",
-      "n/a",
-      "poids*posologie/1000", {
-        'Hérisson (0.4ml/kg)':'0.4',
-        'Renard (0.5ml/kg)' : '0.5',
-        'oiseaux (0.5ml/kg)' : '0.5',
-      });
+  // MyMedicament virbamec = MyMedicament(
+  //   "Virbamec",
+  //   "Antiparasitaire",
+  //   "SC ou transcutanée",
+  //   "Parasites externes, gale, myiases, nématodes intestinaux; molécule: ivermectine (10mg/ml) MAIS il faut préléver le volume indiqué dans une solution diluée 10 fois (1mg/ml). Pour cela, prélever 0.1 ml de virbamec puis 0.9 ml de NaCl. Passereau: 1 goutte en transcutanée.", 
+  //   "Gale: 1 fois par semaine en SC (pendant 3 semaines); Parasites externes : 1 fois (transcutanée ou SC). Passereaux: renouvelable 1 fois tous les 15 jours.",
+  //   "ml/kg",
+  //     "n/a",
+  //     "poids*posologie/1000", {
+  //       'Hérisson (0.4ml/kg)':'0.4',
+  //       'Renard (0.5ml/kg)' : '0.5',
+  //       'oiseaux (0.5ml/kg)' : '0.5',
+  //     });
 
 
   MyMedicament emeprid = MyMedicament(
@@ -365,8 +361,8 @@ void initializeMedicaments() {
   MyMedicament actiselem = MyMedicament(
       "Actiselem",
       "Divers",
-      "VO",
-      "VO ou dans l'eau.",
+      "VO ou dans l'eau",
+      "R.A.S",
       "1 fois par jour pendant 1 à 2 semaines.",
       "ml/kg",
       "n/a",

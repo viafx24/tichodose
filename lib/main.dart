@@ -92,7 +92,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   SizedBox(height: widgetSpaceSmall), // Espacement
 
                   // Ajouter MyDropDownMenu3 si textDropdown2 n'est pas nul
-                  if (textDropdown2 != null && textDropdown1!='Cas spécial sans calcul')
+                  if (textDropdown2 != null && textDropdown1!='\u200B Cas spécial sans calcul')
                     Column(
                       children: [
                         MyRadioButton(),
@@ -127,7 +127,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   //       .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter MyResult si volume n'est pas nul
-                  if (volume != null || textDropdown1!='Cas spécial sans calcul')
+                  if (volume != null || textDropdown1=='\u200B Cas spécial sans calcul' && textDropdown2!=null )
                     const MyResult()
                   else
                     const SizedBox
