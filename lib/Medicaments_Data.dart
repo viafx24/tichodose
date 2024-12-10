@@ -1,3 +1,17 @@
+// Fichier des médicaments:
+// Chaque médicament peut avoir :
+// un nom (ex: augmentin)
+// une catégorie (ex: antibiotique)
+// un mode d'administration (ex: VO)
+// une information importante (ex: Attention: jamais en VO pour les rongeurs. )
+// une information générale (ex: Antalgique, anti-inflammatoire; molécule: meloxicam (1.5mg/ml).)
+// une durée de traitement (ex: 1 à 2 fois par jour (pendant 3 à 7 jours).)
+// une unité de dosage (soit mg/kg soit ml/kg)
+// un facteur de dilution (ex: 1.5)
+// une équation de réference (différente si mg/kg ou ml/kg)
+// une posologie sous forme de table (ex: Oiseau (1mg/kg)': '1', 'Hérisson (0.2mg/kg)': '0.2' )
+
+
 import "MyMedicament.dart";
 
 void initializeMedicaments() {

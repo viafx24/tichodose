@@ -1,3 +1,6 @@
+// fichier principale d'entrée dans l'application. Son rôle principal est de gérer l'empilement des widgets
+// et ce, de manière conditionnel.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +53,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
     String? textDropdown1 = context.watch<MyVariableToListen>().textDropdown1;
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
     String? textDropdown3 = context.watch<MyVariableToListen>().textDropdown3;
-    int? poids = context.watch<MyVariableToListen>().poids;
+    //int? poids = context.watch<MyVariableToListen>().poids;
     String? volume = context.watch<MyVariableToListen>().volume;
     String selectedRadioValue =
         context.watch<MyVariableToListen>().selectedRadioValue;
