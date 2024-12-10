@@ -14,7 +14,6 @@ import 'MyRadioButton.dart';
 import 'MyInputFieldManual.dart';
 import 'CalculationAndDilution.dart';
 
-
 // Fonction principale du programme
 void main() {
   // Initialiser les données des médicaments
@@ -92,11 +91,12 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   SizedBox(height: widgetSpaceSmall), // Espacement
 
                   // Ajouter MyDropDownMenu3 si textDropdown2 n'est pas nul
-                  if (textDropdown2 != null && textDropdown1!='\u200B Cas spécial sans calcul')
+                  if (textDropdown2 != null &&
+                      textDropdown1 != '\u200B Cas spécial sans calcul')
                     Column(
                       children: [
                         MyRadioButton(),
-                        SizedBox(height: widgetSpaceSmall),  //
+                        SizedBox(height: widgetSpaceSmall), //
                         selectedRadioValue == "Dosage prédefini"
                             ? const MyDropDownMenu3()
                             : selectedRadioValue == "Dosage manuel"
@@ -127,17 +127,34 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                   //       .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter MyResult si volume n'est pas nul
-                  if (volume != null || textDropdown1=='\u200B Cas spécial sans calcul' && textDropdown2!=null )
+                  if (volume != null ||
+                      textDropdown1 == '\u200B Cas spécial sans calcul' &&
+                          textDropdown2 != null)
                     const MyResult()
                   else
                     const SizedBox
                         .shrink(), // Utiliser SizedBox.shrink() comme espace réservé
 
                   // Ajouter SizedBox avec hauteur différente selon que volume est nul ou non
-                  if (volume != null)
-                    const SizedBox(height: 1)
-                  else
-                    const SizedBox(height: 20),
+                  // // Affiche un avertissement sur la vérification des résultats
+
+                  const Divider(color: Colors.black, thickness: 1),
+
+                  const Text(
+                      "Pour l'instant, vérifiez les calculs par vous-même. ",
+                      style: TextStyle(fontSize: 14.0, color: Colors.red)),
+
+                  const Divider(color: Colors.black, thickness: 1),
+
+                  const Text("Tichodose phase de test / version 0.2 / décembre 2024",
+                      style: TextStyle(fontSize: 14.0, color: Colors.cyan)),
+
+                  const Divider(color: Colors.black, thickness: 1),
+
+                  // if (volume != null)
+                  //   const SizedBox(height: 1)
+                  // else
+                  //   const SizedBox(height: 20),
                 ],
               ),
             ),

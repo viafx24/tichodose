@@ -2,15 +2,15 @@ import "MyMedicament.dart";
 
 void initializeMedicaments() {
   MyMedicament melox = MyMedicament(
-      "Melox / metacam (1.5mg/ml)",
+      "Melox / metacam",
       "Anti-inflammatoire",
       "VO",
       "",      
-      "Antalgique, anti-inflammatoire; molécule active: meloxicam",
+      "Antalgique, anti-inflammatoire; molécule active: meloxicam (1.5mg/ml).",
       "1 à 2 fois par jour (pendant 3 à 7 jours).",
       "mg/kg",
       "1.5",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau (1mg/kg)': '1',
     'Gros rapace > 1500gr (0.5mg/kg)': '0.5',
     'Cygne (0.2mg/kg)': '0.2',
@@ -30,13 +30,13 @@ void initializeMedicaments() {
       "Anti-inflammatoire",
       "SC ou IM",
       "",
-      "Etat de choc, troubles neurologiques; Hérisson : 4 mg/kg le 1er jour puis 2mg/kg.",
-      "1 fois par jour (de 1 à 5 jours)",
+      "Etat de choc, troubles neurologiques ; molécule: dexaméthasone (2mg/ml) ; Hérisson : 4 mg/kg le 1er jour puis 2mg/kg.",
+      "1 fois par jour (de 1 à 5 jours).",
       "mg/kg",
       "2",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau pleine dose (4mg/kg)': '4',
-    'Oiseau demi dose (2mg/kg)': '5',
+    'Oiseau demi dose (2mg/kg)': '2',
     'Gros rapace (1mg/kg)': '1',
     'Gros rapace Neuro++ (4mg/kg)': '4',
     'Hérisson pleine dose (4mg/kg)': '4',
@@ -65,15 +65,15 @@ void initializeMedicaments() {
   });
 
   MyMedicament meloxidolor = MyMedicament(
-      "Meloxidolor (SC)",
+      "Meloxidolor",
       "Anti-inflammatoire",
       "SC",
-      "Attention au risque de confusion avec le melox/metacam (concentration différente)",
-      "Antalgique, anti-inflammatoire ; ",
-      "1 fois par jour (pendant 3 à 7 jours)",
+      "Attention au risque de confusion avec le melox/metacam (concentration différente).",
+      "Antalgique, anti-inflammatoire ; molécule: méloxicam (5mg/ml).",
+      "1 fois par jour (pendant 3 à 7 jours).",
       "mg/kg",
       "5",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Hérisson (0.2mg/kg)': '0.2',
     'Lapin dose min (0.3mg/kg)': '0.3',
     'Lapin dose max (1mg/kg)': '1',
@@ -92,7 +92,7 @@ void initializeMedicaments() {
       "2 fois par jour pendant 7 jours",
       "mg/kg",
       "112.5",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     //'Oiseau (1ml/kg)': 'poids/1000',
     'Oiseau (112.5mg/kg)': '112.5',
     'Hérisson (40mg/kg)': '40',
@@ -106,11 +106,11 @@ void initializeMedicaments() {
       "Antibiotique",
       "VO",
       "",
-      "molecule = clindamycine (25mg/ml)",
+      "molecule: clindamycine (25mg/ml)",
       "2 fois par jour.",
       "mg/kg",
       "25",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau (50mg/kg)': '50',
   });
 
@@ -119,7 +119,7 @@ void initializeMedicaments() {
       "Antibiotique",
       "VO",
       "",
-      "molecules: Sulfaméthoxazole(40 mg/ml ?)/ Triméthoprime(8 mg/ml?).",
+      "molecules: Sulfaméthoxazole(40mg/ml)/ Triméthoprime(8mg/ml).",
       "2 fois par jour",
       "ml/kg",
       "n/a",
@@ -132,11 +132,11 @@ void initializeMedicaments() {
       "Antibiotique",
       "VO",
       "",
-      "Antibiotique à large spectre (Troubles digestifs + respiratoires + contre salmonelles et coccidies); Sulfadiazine + triméthoprime",
+      "Antibiotique à large spectre (Troubles digestifs + respiratoires + contre salmonelles et coccidies); molécule: Sulfadiazine (83.35 mg/ml) + triméthoprime (16.65 mg/ml).",
       "1 à 2 fois par jour Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes).",
       "mg/kg",
       "100",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     //'Oiseau (0.3ml/kg)': 'poids*0.3/1000',
     'Oiseau (30mg/kg)': '30',
     'Hérisson (30mg/kg)': '30',
@@ -149,7 +149,7 @@ void initializeMedicaments() {
       "Antibiotique",
       "VO",
       "",
-      "molecule: Azithromycine (40mg/ml) ",
+      "molecule: Azithromycine (40mg/ml).",
       "1 fois par jour.",
       "ml/kg",
       "n/a",
@@ -162,11 +162,11 @@ void initializeMedicaments() {
       "Antibiotique",
       "SC ou IM",
       "",
-      "Antibiotique à large spectre (troubles digestifs + respiratoires + contre salmonelles et coccidies);sulfaméthoxypyridazine(200mg/kg) + triméthoprime(40mg/kg)",
+      "Antibiotique à large spectre (troubles digestifs + respiratoires + contre salmonelles et coccidies) ; sulfaméthoxypyridazine(200mg/kg) + triméthoprime(40mg/kg) ; Hérisson: problème digestif. Rongeur: problème respiratoire (fausse route).",
       "2 fois par jours pendant 7 jours.",
       "mg/kg",
       "240",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Hérisson (30mg/kg)': '30',
     'Rongeur dose min (15mg/kg)': '15',
     'Rongeur dose max (30mg/kg)': '30',
@@ -177,11 +177,11 @@ void initializeMedicaments() {
       "Antibiotique",
       "VO ou SC",
       "",
-      "Antibiotique à large spectre (plaies, mauvais état général, encéphalite); molecule: oxytétracycline (50mg/ml)",
-      "Pendant 6 à 7 jours (peut être prolongé jusqu’à amélioration des symptômes)",
+      "Antibiotique à large spectre (plaies, mauvais état général, encéphalite); molecule: oxytétracycline (50mg/ml).",
+      "2 fois par jour pendant 7 à 10 jours.",
       "mg/kg",
       "50",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau (50mg/kg)': '50',
     'Hérisson (50 mg/kg)': '50',
     'Petit carnivore dose min (5mg/kg)': '5',
@@ -189,7 +189,7 @@ void initializeMedicaments() {
     'Renard (10mg/kg)': '10',
     'Blaireau (5mg/kg)': '5',
     'Rongeur (30mg/kg)': '30',
-    'Lapin VO (50mg/kg) ': '50',
+    'Lapin (50mg/kg) ': '50',
     'Chevreuil (10mg/kg)': '10'
     //'Chevreuil (2ml/10kg)': 'poids*2/10000',
   });
@@ -200,10 +200,10 @@ void initializeMedicaments() {
       "VO ou SC",
       "Attention pour les SC, il faut prélever 0.5 ml de NaCl stérile aprés et en plus du volume indiqué ci-dessus. Cette règle ne s'applique pas si une dilution vous est déjà demandée ci-dessous.",
       "Antibiotique à large spectre (sur avis véterinaire + antibiogramme); molécule: enrofloxacine 5% ; Oiseaux: VO ou SC; Mammifère: uniquement SC.",
-      "2 fois par jour",
+      "2 fois par jour.",
       "mg/kg",
       "50",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
         'Oiseaux (20mg/kg)': '20',
         'Hérisson / rongeur (10 mg/kg)': '10',
         });
@@ -212,9 +212,9 @@ void initializeMedicaments() {
       "Shotapen",
       "Antibiotique",
       "SC ou IM",
-      "Attention produit épais:bien secouer le produit/ flacon avant et injecter avec une aiguille verte.",
-      "Antibiotique à large spectre et longue action (Pour plaie); molécule: benzylpénicilline (13,1 mg/kg) + dihydrostreptomycine (16,4 mg).",
-      "1 fois par 72 heures",
+      "Attention produit épais : bien secouer le produit / flacon avant et injecter avec une aiguille verte.",
+      "Antibiotique à large spectre et longue action (Pour plaie); molécule: benzylpénicilline (130.38mg/ml) + dihydrostreptomycine (164mg/ml).",
+      "1 fois par 72 heures.",
       "ml/kg",
       "n/a",
       "poids*posologie/1000", {
@@ -226,8 +226,8 @@ void initializeMedicaments() {
       "Antibiotique",
       "SC",
       "Attention : Bien agiter le flacon avant utilisation (1). Préparer la seringue au dernier moment (2). Injecter avec une aiguille verte (3).",
-      "Antibiotique à large spectre. Molécule: amoxicilline (140mg/ml à vérifier) + acide clavulanique (35mg/ml à vérifier)).",
-      "1 fois par jour",
+      "Antibiotique à large spectre. Molécule: amoxicilline (140mg/ml) + acide clavulanique (35mg/ml).",
+      "1 fois par jour.",
       "ml/kg",
       "n/a",
       "poids*posologie/1000", {
@@ -239,11 +239,11 @@ void initializeMedicaments() {
       "Antiparasitaire",
       "VO",
       "",
-      "Nématodes intestinaux et certains respiratoires + oxyures; toxique pour les vautours ; molécule: fenbendazole (25mg/ml à vérifier)",
-      "1 fois par jour pendant 5 jours",
+      "Nématodes intestinaux et certains respiratoires + oxyures ; le meilleur antiparasitaire pour les oiseaux mais toxique pour les vautours ; molécule: fenbendazole (25mg/ml).",
+      "1 fois par jour pendant 5 jours (oiseaux).",
       "mg/kg",
       "25",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau (20mg/kg)': '20',
     'Hérisson (100mg/kg)': '100',
     'Ecureuil/Lapin (20mg/kg)': '20',
@@ -255,12 +255,12 @@ void initializeMedicaments() {
       "Flagyl",
       "Antiparasitaire",
       "VO",
-      "",
-      "Troubles digestifs (bactéries clostridium) ; Mauvais état général ; molécule: métronidazol (25mg/ml à vérifier) ; Déconseillé pour les passereaux.",
-      "Hérisson: 1 fois par jour / Ecureuil 2 fois par jour pendant 7 jours.",
+      "Déconseillé pour les passereaux.",
+      "Troubles digestifs (bactéries clostridium) ; Mauvais état général ; molécule: métronidazol (25mg/ml).",
+      "Hérisson: 1 fois par jour / Ecureuil 2 fois par jour / oiseaux 2 fois par jour ; pendant 5 à 7 jours.",
       "mg/kg",
       "25",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau hors passereau (20mg/kg)': '20',
     'Hérisson (40mg/kg)': '40',
     'Ecureuil (20mg/kg)': '20',
@@ -271,7 +271,7 @@ void initializeMedicaments() {
       "Antiparasitaire",
       "VO",
       "",
-      "molécule: Dimétridazole (166.87mg/ml à vérifier)",
+      "molécule: Dimétridazole (166.87mg/ml)",
       "1 fois par jour pendant 7 jours",
       "ml/kg",
       "n/a",
@@ -284,11 +284,11 @@ void initializeMedicaments() {
       "Antiparasitaire",
       "VO",
       "",
-      "Nématodes intestinaux et certains respiratoires + oxyures ; Molécule: oxfendazole (22.65mg/ml) ; A renouveler 2 semaines plus tard si besoin ; Si surdosage : pas de danger. ",
-      "Hérisson: 1 fois par jour pendant 7 jours/ petit carnivore (Renard): 1 fois par jour pendant 3 jours.",
+      "Nématodes intestinaux et certains respiratoires + oxyures ; Molécule: oxfendazole (22.65mg/ml) ; A renouveler 2 semaines plus tard si besoin ; si surdosage : pas de danger.",
+      "Hérisson: 1 fois par jour pendant 7 jours / petit carnivore (Renard): 1 fois par jour pendant 3 jours.",
       "mg/kg",
       "22.65",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Hérisson (100mg/kg)': '100',
     'Petit carnivore/Renard (11.3mg/kg)': '11.3'
     //'Petit carnivore/Renard (0.5ml/kg)': 'poids*0.5/1000',
@@ -300,10 +300,10 @@ void initializeMedicaments() {
       "VO",
       "",
       "Nématodes intestinaux et certains respiratoires. Si surdosage : hypersalivation, vomissements, diarrhée, polypnée, ataxie, tremblements, convulsions. Molécule: lévamisole (3.75%) ",
-      "1 fois par jour (pendant 3 jours) puis 1 fois/semaine pendant 2 semaines",
+      "1 fois par jour (pendant 3 jours) puis 1 fois/semaine pendant 2 semaines (mammifères)",
       "mg/kg",
       "31.8",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Mammifère (25mg/kg)': '25',
     'Oiseaux dose min (10mg/kg)': '10',
     'Oiseaux dose max (15mg/kg)': '15'
@@ -314,11 +314,11 @@ void initializeMedicaments() {
       "Antiparasitaire",
       "SC",
       "Attention: si l'animal est faible : demi-dose pendant 3 jours puis dose normale",
-      "Nématodes intestinaux et certains respiratoires. Si surdosage : hypersalivation, vomissements, diarrhée, polypnée, ataxie, tremblements, convulsions. molécule: lévamisole (150mg/ml)",
-      "1 fois par jour (pendant 3 jours) puis 1 fois/semaine pendant 2 semaines",
+      "Nématodes intestinaux et certains respiratoires. Si surdosage : hypersalivation, vomissements, diarrhée, polypnée, ataxie, tremblements, convulsions. molécule: lévamisole (150mg/ml) ; Le pire antiparasitaire pour les oiseaux.",
+      "1 fois par jour (pendant 3 jours) puis 1 fois/semaine pendant 2 semaines (mammifères)",
       "mg/kg",
       "150",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Mammifère demi dose (12.5mg/kg)': '12.5',
     'Mammifère pleine dose (25mg/kg)': '25',
     'oiseaux (20mg/ml)': '20'
@@ -348,7 +348,7 @@ void initializeMedicaments() {
       "2 fois par jours (de 1 à 3 jours)",
       "mg/kg",
       "1",
-      "(poids*(posologie/1000))/concentrationSolution", {
+      "poids*posologie/1000/concentrationSolution", {
     'Oiseau (0.1mg/kg)': '0.1',
     //'Oiseau (0.1ml/kg)': 'poids*0.1/1000',
     'Mammifère dose min (0.2mg/kg)': '0.2',
@@ -360,7 +360,7 @@ void initializeMedicaments() {
       "Divers",
       "VO",
       "",
-      "anti-fongique; molécule: itraconazole (10mg/ml à vérifier) ",
+      "anti-fongique; molécule: itraconazole (10mg/ml) ",
       "1 fois par jour",
       "ml/kg",
       "n/a",
@@ -391,14 +391,14 @@ void initializeMedicaments() {
       "ml/kg",
       "n/a",
       "poids*posologie/1000", {
-    'Oiseau (1ml/10kg)': '0.1',
+    'Oiseau (0.1ml/kg)': '0.1',
   });
 
   MyMedicament kaopectate = MyMedicament(
       "Kaopectate",
       "Divers",
       "VO",
-      "Attention : ne pas donner en même temps que les médocs en VO : décaler de 1h avec les médocs en VO.",
+      "Attention : ne pas donner en même temps que les médocs en VO : décaler de 1h.",
       "Diarrhée + salmonellose; molécule: kaolin + pectine ; Dose à augmenter si le traitement est inefficace.",
       "2 à 3 fois par jour (de 3 à 5 jours)",
       "ml/kg",
@@ -411,8 +411,8 @@ void initializeMedicaments() {
       "Smecta (sachet dilué dans l'eau)",
       "Divers",
       "VO",
-      "Attention : ne pas donner en même temps que les médocs en VO : décaler de 1h avec les médocs en VO.",
-      "Diarrhée ;molécule: diosmectine ; Dose à augmenter si le traitement est inefficace. Pas de risque de surdosage.",
+      "Attention : ne pas donner en même temps que les médocs en VO : décaler de 1h.",
+      "Diarrhée ; molécule: diosmectine ; dose à augmenter si le traitement est inefficace. Pas de risque de surdosage. Préparation: diluer le sachet de smecta dans de l'eau: la solution doit être la plus concentrée possible.",
       "2 à 3 fois par jour (jusqu’à disparition des symptômes)",
       "ml/kg",
       "n/a",
@@ -425,7 +425,7 @@ MyMedicament imaveral = MyMedicament(
   "\u200B Cas spécial sans calcul",
   "cutanée",
   "",
-  "Contre la teigne / mycose. Produit à diluer: 2.5 ml d'Imaveral pour 125 ml d'eau puis appliquer la dilution sur tout le corps de l'animal. Ne pas rincer.",
+  "Contre la teigne / mycose. Produit à diluer: 2.5 ml d'Imaveral pour 125 ml d'eau puis appliquer la dilution sur tout le corps de l'animal. Ne pas rincer. molécule: enilconazole (100mg/ml).",
   "1 application tous les 3 jours au 4 jours. Faire 4 applications.",
   "n/a",
   "n/a",
@@ -438,9 +438,9 @@ MyMedicament charbon = MyMedicament(
   "Charbon actif",
   "\u200B Cas spécial sans calcul",
   "VO",
-  "Attention: ne pas donner en même temps que les médocs en VO : décaler de 1 heure avec les médocs en VO.",
+  "Attention: ne pas donner en même temps que les médocs en VO : décaler de 1 heure.",
   "Problème digestif + aide salmonellose;  Produit à diluer: 1 gélule dans 5 ml d'eau. Donner environ 10% du poids 2 à 3 fois par jour.",
-  "chaque repas pour petits mammifères si besoin. pour empoisonnement: 2 à 3 fois par jours de 3 à 5 jours.",
+  "à chaque repas pour les petits mammifères si besoin. Pour un empoisonnement: 2 à 3 fois par jours de 3 à 5 jours.",
   "n/a",
   "n/a",
   "n/a",
@@ -465,8 +465,8 @@ MyMedicament candilat = MyMedicament(
   "\u200B Cas spécial sans calcul",
   "IM",
   "",
-  "Trouble de la sénescence cérébrale. Chevreuil: 1ml<10kg; 1.5ml si 10kg < poids < 20kg ; 3ml si poids > 20 kg.",
-  "1 fois par jour (revoir selon le cas avec Dr Jeannet pour le temps de traitement)",
+  "Trouble de la sénescence cérébrale. Chevreuil: 1ml<10kg; 1.5ml si le poids est compris entre 10kg et 20kg ; 3 ml si poids > 20 kg.",
+  "1 fois par jour (revoir selon le cas avec le Dr Jeannet pour le temps de traitement)",
   "n/a",
   "n/a",
   "n/a",
@@ -479,7 +479,7 @@ MyMedicament milbemax = MyMedicament(
   "\u200B Cas spécial sans calcul",
   "VO",
   "",
-  "Trématodes + cestodes gastro-intestinaux. Molécule: praziquantel. Posologie: 7mg/kg. Poids(g)*7/1000=A sachant que dans 1 comprimé, il y a 10 mg.",
+  "Trématodes + cestodes gastro-intestinaux. Molécule: praziquantel. Posologie: 7mg/kg. Poids(g)*7/1000=A. Sachant que dans 1 comprimé, il y a 10 mg.",
   "1 fois par jour (pendant 1 à 3 jours). A renouveler 2 semaines plus tard.",
   "n/a",
   "n/a",
@@ -493,7 +493,7 @@ MyMedicament vitaminek1 = MyMedicament(
   "\u200B Cas spécial sans calcul",
   "SC ou VO",
   "",
-  "SC - 5mg/kg. Le premier jour : 2 fois par jour (si état toujours préoccupant, 1x/j le 2ème et 3ème jour, sinon passer à VO. VO: 2.5 mg/kg)",
+  "SC - 5mg/kg. Le premier jour : 2 fois par jour (si état toujours préoccupant, 1x/j le 2ème et 3ème jour, sinon passer à VO. VO: 2.5 mg/kg).",
   "2 à 3 semaines.",
   "n/a",
   "n/a",
@@ -546,7 +546,7 @@ MyMedicament ultraB = MyMedicament(
   "IM",
   "",
   "3 mg/kg (cf tableau dilution UB pour martinets et petites espèces)",
-  "2 semaines minimum",
+  "n/a",
   "n/a",
   "n/a",
   "n/a",
@@ -558,7 +558,7 @@ MyMedicament antirobe = MyMedicament(
   "\u200B Cas spécial sans calcul",
   "VO",
   "",
-  "molécule: clindamycine ; Antirobe (25 ou 75 mg); Zodon (88mg sécable); posologie: 150 mg/kg 1 fois par jour",
+  "molécule: clindamycine ; Antirobe (25 ou 75 mg); Zodon (88mg sécable); posologie: 150 mg/kg 1 fois par jour (voir tableau).",
   "n/a",
   "n/a",
   "n/a",

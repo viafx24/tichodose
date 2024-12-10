@@ -150,10 +150,14 @@ class _MyResultState extends State<MyResult> {
                       style: const TextStyle(
                           fontWeight: FontWeight
                               .bold)), // Met en gras le texte de textDropdown2
-                              const TextSpan(text: ". "),
+                  const TextSpan(text: ". "),
                   TextSpan(
-                      text: '$infoImportante',
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                    text: '$infoImportante',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red, // Ajout de la couleur rouge
+                    ),
+                  ),
                   if (volumeAsDouble != null &&
                       volumeAsDouble >= limiteVolumePipetable)
                     const TextSpan(
@@ -407,16 +411,6 @@ class _MyResultState extends State<MyResult> {
                   const TextStyle(fontSize: 14.0)), // Aligne le texte à gauche
           const Divider(color: Colors.black, thickness: 1),
 
-          // // Affiche un avertissement sur la vérification des résultats
-          const Text("Pour l'instant, vérifiez les calculs par vous-même. ",
-              style: TextStyle(fontSize: 14.0, color: Colors.red)),
-
-          const Divider(color: Colors.black, thickness: 1),
-
-          const Text("Tichodose version beta 0.2 / novembre 2024",
-              style: TextStyle(fontSize: 14.0, color: Colors.cyan)),
-
-          const Divider(color: Colors.black, thickness: 1),
         ],
       ),
     );
