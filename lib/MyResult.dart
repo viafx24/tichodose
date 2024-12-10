@@ -53,8 +53,7 @@ class _MyResultState extends State<MyResult> {
     String? infoImportante = myMapMedocs[textDropdown2]?.nameInfoImportante;
 
     return Padding(
-      padding: const EdgeInsets.all(
-          16.0), // Ajoute un padding de 16 pixels autour du contenu
+      padding: const EdgeInsets.symmetric(horizontal: 16.0), // Ajoute un padding de 16 pixels autour du contenu
       child: Column(
         children: [
           const Divider(color: Colors.black, thickness: 1),
@@ -409,8 +408,6 @@ class _MyResultState extends State<MyResult> {
           Text("$dureeTraitement",
               style:
                   const TextStyle(fontSize: 14.0)), // Aligne le texte à gauche
-          const Divider(color: Colors.black, thickness: 1),
-
         ],
       ),
     );
