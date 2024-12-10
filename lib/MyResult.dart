@@ -169,6 +169,7 @@ class _MyResultState extends State<MyResult> {
                     )
                   else if (volumeAsDouble != null &&
                       volumeAsDouble < limiteVolumePipetable &&
+                      volumeAsDouble >= limiteVolumeDilution &&
                       poids != null &&
                       poids < poidsProtectionPassereaux &&
                       mode != null &&
