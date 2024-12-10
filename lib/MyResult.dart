@@ -1,3 +1,7 @@
+// classe un peu lourde pour formater correctement les résultats en fonction de différents cas de figure
+// (dilution, VO ou SC etc...). Rien de compliquer: que de la gestion de texte et la récupération des données
+// mises à jour. C'est long car j'utilise text.rich pour avoir le maximum de contrôle sur la mise en forme.
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'MyVariableToListen.dart';
@@ -40,10 +44,8 @@ class _MyResultState extends State<MyResult> {
 
     Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
 
-    // Récupération du mode d'administration
-
     String? mode = myMapMedocs[textDropdown2]?.nameMode;
-    // Récupération des infos supplementaires
+
     String? info = myMapMedocs[textDropdown2]?.nameInfo;
 
     String? dureeTraitement = myMapMedocs[textDropdown2]?.dureeTraitement;
@@ -52,8 +54,11 @@ class _MyResultState extends State<MyResult> {
 
     String? infoImportante = myMapMedocs[textDropdown2]?.nameInfoImportante;
 
+// puis mise en forme des résulats;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0), // Ajoute un padding de 16 pixels autour du contenu
+      padding: const EdgeInsets.symmetric(
+          horizontal: 16.0), // Ajoute un padding de 16 pixels autour du contenu
       child: Column(
         children: [
           const Divider(color: Colors.black, thickness: 1),

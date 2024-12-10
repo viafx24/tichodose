@@ -7,18 +7,18 @@ import 'MyMedicament.dart'; // Importation de la classe pour les médicaments
 import 'package:function_tree/function_tree.dart'; // Importation pour l'interprétation des expressions mathématiques
 
 class CalculationAndDilution with ChangeNotifier {
-
   String _formatVolume(num value, double limiteVolumePipetable) {
     double roundedValue = (value * 10000).round() / 10000;
     // Logique de formatage du volume
     if (roundedValue >= 0.001 && roundedValue < limiteVolumePipetable) {
-      return roundedValue.toStringAsFixed(3);// 3 chiffres entre 0.001 et 0.04
+      return roundedValue.toStringAsFixed(3); // 3 chiffres entre 0.001 et 0.04
     } else if (roundedValue >= limiteVolumePipetable && roundedValue <= 1) {
-      return roundedValue.toStringAsFixed(2);// 2 chiffres aprés la virgule si entre 0.04 et 1
+      return roundedValue
+          .toStringAsFixed(2); // 2 chiffres aprés la virgule si entre 0.04 et 1
     } else if (roundedValue > 1) {
-      return roundedValue.toStringAsFixed(1);// 1 seul chiffre si au dessu de 1
+      return roundedValue.toStringAsFixed(1); // 1 seul chiffre si au dessu de 1
     } else {
-      return roundedValue.toStringAsFixed(4);// sinon 4 chiffres.
+      return roundedValue.toStringAsFixed(4); // sinon 4 chiffres.
     }
   }
 
@@ -41,11 +41,12 @@ class CalculationAndDilution with ChangeNotifier {
     // Récupération de l'équation de calcul à partir de la carte de médicaments
     String? posologie;
 
-    
     if (textDropdown3 != null) {
-      posologie = myMapMedocs[textDropdown2]!.map[textDropdown3];// dosage predefini
+      posologie =
+          myMapMedocs[textDropdown2]!.map[textDropdown3]; // dosage predefini
     } else {
-      posologie = context.read<MyVariableToListen>().inputManualDosage;// dosage manuel
+      posologie =
+          context.read<MyVariableToListen>().inputManualDosage; // dosage manuel
     }
 
     String? equation = myMapMedocs[textDropdown2]!.nameEquation;
@@ -63,9 +64,10 @@ class CalculationAndDilution with ChangeNotifier {
     String volume = _formatVolume(result, limiteVolumePipetable);
     double volumeAsDouble = double.parse(volume);
 
-    // gestion des dilutions: le facteur de dilution peut être 3 5 ou 10 et le but est d'avoir un volume 
+    // gestion des dilutions: le facteur de dilution peut être 3 5 ou 10 et le but est d'avoir un volume
     // qui reste a peu prés entre 0.05 et 0.1
 
+// reinitialise tout à chaque fois que appelé:
     double volumeAfterDilution = 0;
     String roundVolumeAfterDilution = "";
     String nombreGoutte = "";
@@ -76,8 +78,8 @@ class CalculationAndDilution with ChangeNotifier {
     if (poids != null && volumeAsDouble < limiteVolumePipetable) {
       if (volumeAsDouble >= 0.02) {
         volumeAfterDilution = volumeAsDouble * 3;
-        roundVolumeAfterDilution =
-            ((volumeAfterDilution * 100).round() / 100).toStringAsFixed(2);// s'assure que l'arrondi est correcte
+        roundVolumeAfterDilution = ((volumeAfterDilution * 100).round() / 100)
+            .toStringAsFixed(2); // s'assure que l'arrondi est correcte
         nombreGoutte = ((volumeAsDouble * 100).round()).toString();
         dilutionFactor = 3.toString();
         volumeMedocDilution = 0.1.toString();

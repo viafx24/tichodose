@@ -1,3 +1,6 @@
+// Le fichier qui gère l'ensemble des paramètres qui doivent facilement être accessible et mis à jour
+// dans toute l'appli.
+
 import 'package:flutter/material.dart';
 
 // Déclaration de variables globales pour les dimensions des widgets et un booléen
@@ -13,6 +16,8 @@ double limiteVolumeDilution = 0.005;
 // La classe MyVariableToListen étend ChangeNotifier pour notifier les écouteurs des changements d'état
 class MyVariableToListen with ChangeNotifier {
   // Propriétés privées pour stocker les valeurs des éléments de l'interface utilisateur
+// toutes ces variables sont suivi de prés de manière à mettre tout l'arbre à jour quand l'une d'elle change.
+
   String? _textDropdown1;
   String? _textDropdown2;
   String? _textDropdown3;
@@ -184,32 +189,6 @@ class MyVariableToListen with ChangeNotifier {
     return '${_inputManualDosage!} $_uniteDosage'; // Ajoute " à la valeur
     
   }
-
-
-//   String get inputManualDosageWithUnit {
-//   // Ajout des impressions pour vérifier l'état des variables
-//   print("Vérification des variables dans inputManualDosageWithUnit:");
-//   print("_inputManualDosage: $_inputManualDosage");
-//   print("_uniteDosage: $_uniteDosage");
-
-//   // Vérifier si l'une des variables est null
-//   if (_inputManualDosage == null || _uniteDosage == null) {
-//     print("L'une des variables est null. Retourne une chaîne vide.");
-//     return ''; // Retourne une chaîne vide si aucune valeur n'est définie
-//   }
-
-//   // Si les variables sont valides, on retourne la valeur formatée
-//   print("Retourne la valeur formatée: '${_inputManualDosage!} mg/kg'");
-//   return '${_inputManualDosage!} mg/kg'; // Ajoute "mg/kg" à la valeur
-// }
-
-
-// String get inputManualDosageWithUnit {
-//   if (_inputManualDosage == null || _uniteDosage == null) {
-//     return '${_inputManualDosage ?? '0.0'} mg/kg'; // Utilisation d'une valeur par défaut si _uniteDosage est null
-//   }
-//   return '${_inputManualDosage!} $_uniteDosage'; 
-// }
 
   // Méthode appelée lorsque l'objet ChangeNotifier est supprimé
   @override

@@ -1,3 +1,6 @@
+// reset via phoenix car pas si évident en flutter. redondant avec le fait de systématiquement 
+// passer toutes les variables en null lors de l'appuie.
+
 import 'package:flutter/material.dart';
 import 'MyVariableToListen.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -31,6 +34,13 @@ class _MyResetButtonState extends State<MyResetButton> {
           context
               .read<MyVariableToListen>()
               .setVolume(null); // Réinitialise le volume
+
+          context.read<MyVariableToListen>().setRadio("Dosage prédefini");// sans doute inutile
+          // passe également les deux entrée utilisateurs à zero.                      
+          context.read<MyVariableToListen>().setInputManualDosage(null);
+          context.read<MyVariableToListen>().setInputText();
+
+
 
           // Utilise Phoenix pour redémarrer l'application, ce qui réinitialise l'état de l'application
           Phoenix.rebirth(context);

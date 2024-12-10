@@ -1,3 +1,5 @@
+// myinputfield correspond au champ d'entrée utilisateur pour le poids.
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
@@ -27,17 +29,7 @@ class MyInputFieldState extends State<MyInputField> {
       child: TextField(
         controller:
             inputTextController, // Utilise le contrôleur de texte fourni par MyVariableToListen
-        // onChanged: (poidsValue) {
-        //   // Lorsqu'il y a un changement dans le champ de texte, met à jour le poids
-        //   context
-        //       .read<MyVariableToListen>()
-        //       .setVolume(null); // Réinitialise le volume
-        //   poidsValue.characters.isNotEmpty
-        //       ? context.read<MyVariableToListen>().setPoids(
-        //           int.parse(poidsValue)) // Définit le poids s'il y a une valeur
-        //       : context.read<MyVariableToListen>().setPoids(
-        //           null); // Réinitialise le poids s'il n'y a pas de valeur
-        // },
+
         onSubmitted: (poidsValue) {
           context
               .read<MyVariableToListen>()
@@ -48,6 +40,7 @@ class MyInputFieldState extends State<MyInputField> {
               : context.read<MyVariableToListen>().setPoids(
                   null); // Réinitialise le poids s'il n'y a pas de valeur
 
+          // un fois le poids otbtenu, appelle la fonction calculateandupdate pour faire tous les calculs.
           context.read<CalculationAndDilution>().calculateAndUpdate(context);
         },
 
@@ -55,13 +48,23 @@ class MyInputFieldState extends State<MyInputField> {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
           context.read<MyVariableToListen>().setPoids(null);
           context.read<MyVariableToListen>().setVolume(null);
-          context.read<MyVariableToListen>().setInputText();
+          context.read<MyVariableToListen>().setInputText();//clear le controller
         },
+
+      // je décide qu'il y a deux manière de valider une entrée utilisateur: en validant normalement
+      // avec entrée ou le check vert du smartphone (1) ou bien en quittant la zone sans faire entrer.
+      // cela facilite la gestion windows / smartphone ainsi que les gens pour qui le check vert du pavé virtuel
+      // n'est pas directement intuitif. Autrement dit, tout fonctionne pour valider une entrée: quitter la zone
+      // ou valider.
+
         onTapOutside: ((event) {
           // Lorsque le champ de texte perd le focus, dé-focus le champ de texte
           String poidsValue = inputTextController!.text;
+          
+          // la regexp verifie que le poids est un entier (j'ai été obligé de faire un peu différement ici
+          // mais je ne sais plus exactement pourquoi: peut-être parce que le inputformatter ne marchait pas ici.
 
-          if (RegExp(r'^\d+$').hasMatch(poidsValue)) {
+          if (RegExp(r'^\d+$').hasMatch(poidsValue)) { 
             context
                 .read<MyVariableToListen>()
                 .setVolume(null); // Réinitialise le volume
@@ -69,9 +72,9 @@ class MyInputFieldState extends State<MyInputField> {
                 ? context.read<MyVariableToListen>().setPoids(int.parse(
                     poidsValue)) // Définit le poids s'il y a une valeur
                 : context.read<MyVariableToListen>().setPoids(
-                    null); // Réinitialise le poids s'il n'y a pas de valeur
+                    null); // Réinitialise le poids s'il n'y a pas de valeur (partie probablement inutile)
 
-            context.read<CalculationAndDilution>().calculateAndUpdate(context);
+            context.read<CalculationAndDilution>().calculateAndUpdate(context); // appel la fonction de calcul
           }
 
           FocusScope.of(context).unfocus();
@@ -95,59 +98,3 @@ class MyInputFieldState extends State<MyInputField> {
     );
   }
 }
-
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:flutter/services.dart';
-// import 'MyVariableToListen.dart';
-
-// class MyInputField extends StatefulWidget {
-//   const MyInputField({super.key});
-
-//   @override
-//   State<MyInputField> createState() => MyInputFieldState();
-// }
-
-// class MyInputFieldState extends State<MyInputField> {
-//   // final TextEditingController inputTextController = TextEditingController();
-
-
-//   @override
-//   Widget build(BuildContext context) {
-//     TextEditingController? inputTextController = context.watch<MyVariableToListen>().inputTextController;
-
-//     return SizedBox(
-//       width: width,
-//       child: TextField(
-//         controller:inputTextController,
-//         onChanged: (poidsValue) {
-//           context.read<MyVariableToListen>().setVolume(null);
-//           poidsValue.characters.isNotEmpty ?
-//             context.read<MyVariableToListen>().setPoids(int.parse(poidsValue))
-//             : context.read<MyVariableToListen>().setPoids(null);
-//           },
-//         onTap: () {
-//           context.read<MyVariableToListen>().setPoids(null);
-//           context.read<MyVariableToListen>().setVolume(null);},
-
-//         onTapOutside: ((event) {
-//               FocusScope.of(context).unfocus();
-//             }),
-//         textAlign: TextAlign.center,
-//         decoration: const InputDecoration(
-//             border: OutlineInputBorder(),
-//             labelStyle: TextStyle(fontSize: 14),//hintText: 'Entrer le poids en GRAMME',
-//             labelText: "Entrer le poids de l'animal en GRAMME"),
-            
-           
-//         keyboardType: TextInputType.number,
-//         inputFormatters: <TextInputFormatter>[
-//           FilteringTextInputFormatter.digitsOnly
-//         ], // Only numbers can be entered
-//       ),
-//     );
-//   }
-// }

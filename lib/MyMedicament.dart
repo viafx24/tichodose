@@ -1,3 +1,5 @@
+// la class medicament qui indique tous les paramètres que peut posséder un médicament.
+
 class MyMedicament {
   // Liste statique pour stocker toutes les instances de MyMedicament
   static final List<MyMedicament> _medicaments = [];
