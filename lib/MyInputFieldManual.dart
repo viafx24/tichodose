@@ -27,7 +27,10 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
         context.watch<MyVariableToListen>().inputManualDosageWithUnit;
     String? textDropdown2 = context.watch<MyVariableToListen>().textDropdown2;
     Map<String, MyMedicament> myMapMedocs = MyMedicament.getMedicamentsMap();
-    String? uniteDosage = myMapMedocs[textDropdown2]?.nameUniteDosage; // récupère si mg/kg ou ml/kg
+    String? uniteDosage = myMapMedocs[textDropdown2]
+        ?.nameUniteDosage; // récupère si mg/kg ou ml/kg
+
+    int? poids = context.watch<MyVariableToListen>().poids;
 
     return SizedBox(
       width: 300, // Exemple de largeur
@@ -46,9 +49,17 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
           labelStyle: const TextStyle(fontSize: 14),
           border: const OutlineInputBorder(),
         ),
+        enableInteractiveSelection: false, // Empêche la sélection de texte 
         onSubmitted: (value) {
-          context.read<MyVariableToListen>().setUniteDosage(uniteDosage);
-          context.read<MyVariableToListen>().setInputManualDosage(value);
+          if (value.characters.isNotEmpty) {
+            context.read<MyVariableToListen>().setUniteDosage(uniteDosage);
+            context.read<MyVariableToListen>().setInputManualDosage(value);
+          } else {
+            context.read<MyVariableToListen>().setInputManualDosage(null);
+            context.read<MyVariableToListen>().setInputText();
+            context.read<MyVariableToListen>().setPoids(null);
+            context.read<MyVariableToListen>().setVolume(null);
+          }
         },
         onTap: () {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
@@ -72,10 +83,16 @@ class _MyInputFieldManualState extends State<MyInputFieldManual> {
 
           if (isValidInput) {
             // Si la valeur est valide, mettez à jour le contexte
-            context.read<MyVariableToListen>().setUniteDosage(uniteDosage);// indique au provider l'unité
             context
                 .read<MyVariableToListen>()
-                .setInputManualDosage(currentValue);// récupère la valeur entrée par l'utilisateur
+                .setUniteDosage(uniteDosage); // indique au provider l'unité
+            context.read<MyVariableToListen>().setInputManualDosage(
+                currentValue); // récupère la valeur entrée par l'utilisateur
+          } else {
+            context.read<MyVariableToListen>().setInputManualDosage(null);
+            context.read<MyVariableToListen>().setInputText();
+            context.read<MyVariableToListen>().setPoids(null);
+            context.read<MyVariableToListen>().setVolume(null);
           }
 
           FocusScope.of(context).unfocus();

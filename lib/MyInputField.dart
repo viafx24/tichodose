@@ -34,47 +34,58 @@ class MyInputFieldState extends State<MyInputField> {
           context
               .read<MyVariableToListen>()
               .setVolume(null); // Réinitialise le volume
-          poidsValue.characters.isNotEmpty
-              ? context.read<MyVariableToListen>().setPoids(
-                  int.parse(poidsValue)) // Définit le poids s'il y a une valeur
-              : context.read<MyVariableToListen>().setPoids(
-                  null); // Réinitialise le poids s'il n'y a pas de valeur
 
-          // un fois le poids otbtenu, appelle la fonction calculateandupdate pour faire tous les calculs.
-          context.read<CalculationAndDilution>().calculateAndUpdate(context);
+          if (poidsValue.characters.isNotEmpty) {
+            // Définit le poids s'il y a une valeur
+            context.read<MyVariableToListen>().setPoids(int.parse(poidsValue));
+
+            // Appelle la fonction calculateAndUpdate uniquement si un poids a été défini
+            context.read<CalculationAndDilution>().calculateAndUpdate(context);
+          } else {
+            // Réinitialise le poids s'il n'y a pas de valeur
+            context.read<MyVariableToListen>().setPoids(null);
+            context.read<MyVariableToListen>().setInputText();
+          }
         },
 
         onTap: () {
           // Lorsqu'on tape dans le champ de texte, réinitialise le poids et le volume
           context.read<MyVariableToListen>().setPoids(null);
           context.read<MyVariableToListen>().setVolume(null);
-          context.read<MyVariableToListen>().setInputText();//clear le controller
+          context
+              .read<MyVariableToListen>()
+              .setInputText(); //clear le controller
         },
 
-      // je décide qu'il y a deux manière de valider une entrée utilisateur: en validant normalement
-      // avec entrée ou le check vert du smartphone (1) ou bien en quittant la zone sans faire entrer.
-      // cela facilite la gestion windows / smartphone ainsi que les gens pour qui le check vert du pavé virtuel
-      // n'est pas directement intuitif. Autrement dit, tout fonctionne pour valider une entrée: quitter la zone
-      // ou valider.
+        // je décide qu'il y a deux manière de valider une entrée utilisateur: en validant normalement
+        // avec entrée ou le check vert du smartphone (1) ou bien en quittant la zone sans faire entrer.
+        // cela facilite la gestion windows / smartphone ainsi que les gens pour qui le check vert du pavé virtuel
+        // n'est pas directement intuitif. Autrement dit, tout fonctionne pour valider une entrée: quitter la zone
+        // ou valider.
 
         onTapOutside: ((event) {
           // Lorsque le champ de texte perd le focus, dé-focus le champ de texte
           String poidsValue = inputTextController!.text;
-          
+
           // la regexp verifie que le poids est un entier (j'ai été obligé de faire un peu différement ici
           // mais je ne sais plus exactement pourquoi: peut-être parce que le inputformatter ne marchait pas ici.
 
-          if (RegExp(r'^\d+$').hasMatch(poidsValue)) { 
+          if (RegExp(r'^\d+$').hasMatch(poidsValue)) {
             context
                 .read<MyVariableToListen>()
                 .setVolume(null); // Réinitialise le volume
-            poidsValue.characters.isNotEmpty
-                ? context.read<MyVariableToListen>().setPoids(int.parse(
-                    poidsValue)) // Définit le poids s'il y a une valeur
-                : context.read<MyVariableToListen>().setPoids(
-                    null); // Réinitialise le poids s'il n'y a pas de valeur (partie probablement inutile)
-
-            context.read<CalculationAndDilution>().calculateAndUpdate(context); // appel la fonction de calcul
+            context
+                .read<MyVariableToListen>()
+                .setPoids(int.parse(poidsValue)); // Définit le poids
+            context
+                .read<CalculationAndDilution>()
+                .calculateAndUpdate(context); // Appelle la fonction de calcul
+          } else {
+            // Réinitialise le poids s'il n'y a pas de valeur
+            context
+                .read<MyVariableToListen>()
+                .setInputText(); //clear le controller
+            context.read<MyVariableToListen>().setPoids(null);
           }
 
           FocusScope.of(context).unfocus();
