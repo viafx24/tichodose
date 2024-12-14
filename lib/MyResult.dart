@@ -247,7 +247,7 @@ class _MyResultState extends State<MyResult> {
                     const TextSpan(text: ' de '),
 
                     const TextSpan(
-                        text: "Nacl",
+                        text: "NaCl",
                         style: TextStyle(fontWeight: FontWeight.bold)),
 
                     const TextSpan(
@@ -373,7 +373,7 @@ class _MyResultState extends State<MyResult> {
                     const TextSpan(text: ' de '),
 
                     const TextSpan(
-                        text: "Nacl",
+                        text: "NaCl",
                         style: TextStyle(fontWeight: FontWeight.bold)),
 
                     const TextSpan(
