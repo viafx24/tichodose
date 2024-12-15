@@ -335,7 +335,7 @@ void initializeMedicaments() {
       "poids*posologie/1000/concentrationSolution", {
     'Mammifère demi dose (12.5mg/kg)': '12.5',
     'Mammifère pleine dose (25mg/kg)': '25',
-    'oiseaux (20mg/ml)': '20'
+    'Oiseaux (20mg/ml)': '20'
   });
 
   // MyMedicament virbamec = MyMedicament(
