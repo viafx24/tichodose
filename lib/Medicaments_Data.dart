@@ -11,7 +11,6 @@
 // une équation de réference (différente si mg/kg ou ml/kg)
 // une posologie sous forme de table (ex: Oiseau (1mg/kg)': '1', 'Hérisson (0.2mg/kg)': '0.2' )
 
-
 import "MyMedicament.dart";
 
 void initializeMedicaments() {
@@ -19,7 +18,7 @@ void initializeMedicaments() {
       "Melox / Metacam",
       "Anti-inflammatoire",
       "VO",
-      "",      
+      "",
       "Antalgique, anti-inflammatoire ; molécule: meloxicam (1.5mg/ml).",
       "1 à 2 fois par jour (pendant 3 à 7 jours).",
       "mg/kg",
@@ -218,9 +217,9 @@ void initializeMedicaments() {
       "mg/kg",
       "50",
       "poids*posologie/1000/concentrationSolution", {
-        'Oiseaux (20mg/kg)': '20',
-        'Hérisson / rongeur (10 mg/kg)': '10',
-        });
+    'Oiseaux (20mg/kg)': '20',
+    'Hérisson / rongeur (10 mg/kg)': '10',
+  });
 
   MyMedicament shotapen = MyMedicament(
       "Shotapen",
@@ -342,7 +341,7 @@ void initializeMedicaments() {
   //   "Virbamec",
   //   "Antiparasitaire",
   //   "SC ou transcutanée",
-  //   "Parasites externes, gale, myiases, nématodes intestinaux; molécule: ivermectine (10mg/ml) MAIS il faut préléver le volume indiqué dans une solution diluée 10 fois (1mg/ml). Pour cela, prélever 0.1 ml de virbamec puis 0.9 ml de NaCl. Passereau: 1 goutte en transcutanée.", 
+  //   "Parasites externes, gale, myiases, nématodes intestinaux; molécule: ivermectine (10mg/ml) MAIS il faut préléver le volume indiqué dans une solution diluée 10 fois (1mg/ml). Pour cela, prélever 0.1 ml de virbamec puis 0.9 ml de NaCl. Passereau: 1 goutte en transcutanée.",
   //   "Gale: 1 fois par semaine en SC (pendant 3 semaines); Parasites externes : 1 fois (transcutanée ou SC). Passereaux: renouvelable 1 fois tous les 15 jours.",
   //   "ml/kg",
   //     "n/a",
@@ -351,7 +350,6 @@ void initializeMedicaments() {
   //       'Renard (0.5ml/kg)' : '0.5',
   //       'oiseaux (0.5ml/kg)' : '0.5',
   //     });
-
 
   MyMedicament emeprid = MyMedicament(
       "Emeprid ",
@@ -434,150 +432,146 @@ void initializeMedicaments() {
     'Mammifère (1ml/kg)': '1 ',
   });
 
-MyMedicament imaveral = MyMedicament(
-  "Imaveral",
-  "\u200B Cas spécial sans calcul",
-  "cutanée",
-  "",
-  "Contre la teigne / mycose. Produit à diluer: 2.5 ml d'Imaveral pour 125 ml d'eau puis appliquer la dilution sur tout le corps de l'animal. Ne pas rincer. Molécule: enilconazole (100mg/ml).",
-  "1 application tous les 3 jours au 4 jours. Faire 4 applications.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament imaveral = MyMedicament(
+      "Imaveral",
+      "\u200B Cas spécial sans calcul",
+      "cutanée",
+      "",
+      "Contre la teigne / mycose. Produit à diluer: 2.5 ml d'Imaveral pour 125 ml d'eau puis appliquer la dilution sur tout le corps de l'animal. Ne pas rincer. Molécule: enilconazole (100mg/ml).",
+      "1 application tous les 3 jours au 4 jours. Faire 4 applications.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
+  MyMedicament charbon = MyMedicament(
+      "Charbon actif",
+      "\u200B Cas spécial sans calcul",
+      "VO",
+      "Attention: ne pas donner en même temps que les médocs en VO : décaler de 1 heure.",
+      "Problème digestif + aide salmonellose ;  produit à diluer: 1 gélule dans 5 ml d'eau. Donner environ 10% du poids 2 à 3 fois par jour.",
+      "A chaque repas pour les petits mammifères si besoin. Pour un empoisonnement: 2 à 3 fois par jours de 3 à 5 jours.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament charbon = MyMedicament(
-  "Charbon actif",
-  "\u200B Cas spécial sans calcul",
-  "VO",
-  "Attention: ne pas donner en même temps que les médocs en VO : décaler de 1 heure.",
-  "Problème digestif + aide salmonellose ;  produit à diluer: 1 gélule dans 5 ml d'eau. Donner environ 10% du poids 2 à 3 fois par jour.",
-  "A chaque repas pour les petits mammifères si besoin. Pour un empoisonnement: 2 à 3 fois par jours de 3 à 5 jours.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament fortiflora = MyMedicament(
+      "Forti flora",
+      "\u200B Cas spécial sans calcul",
+      "VO",
+      "",
+      "Probiotique: 1/4 de sachet pour un hérisson d'environ 1 kg.",
+      "2 semaines minimum.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament fortiflora = MyMedicament(
-  "Forti flora",
-  "\u200B Cas spécial sans calcul",
-  "VO",
-  "",
-  "Probiotique: 1/4 de sachet pour un hérisson d'environ 1 kg.",
-  "2 semaines minimum.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament candilat = MyMedicament(
+      "Candilat injectable",
+      "\u200B Cas spécial sans calcul",
+      "IM",
+      "",
+      "Trouble de la sénescence cérébrale. Chevreuil: 1ml<10kg; 1.5ml si le poids est compris entre 10kg et 20kg ; 3 ml si poids > 20 kg.",
+      "1 fois par jour (revoir selon le cas avec le Dr Jeannet pour le temps de traitement).",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament candilat = MyMedicament(
-  "Candilat injectable",
-  "\u200B Cas spécial sans calcul",
-  "IM",
-  "",
-  "Trouble de la sénescence cérébrale. Chevreuil: 1ml<10kg; 1.5ml si le poids est compris entre 10kg et 20kg ; 3 ml si poids > 20 kg.",
-  "1 fois par jour (revoir selon le cas avec le Dr Jeannet pour le temps de traitement).",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament milbemax = MyMedicament(
+      "Milbemax",
+      "\u200B Cas spécial sans calcul",
+      "VO",
+      "",
+      "Trématodes + cestodes gastro-intestinaux. Molécule: praziquantel. Posologie: 7mg/kg. Poids(g)*7/1000=A. Sachant que dans 1 comprimé, il y a 10 mg.",
+      "1 fois par jour (pendant 1 à 3 jours). A renouveler 2 semaines plus tard.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
+  MyMedicament vitaminek1 = MyMedicament(
+      "Vitamine K1",
+      "\u200B Cas spécial sans calcul",
+      "SC ou VO",
+      "",
+      "SC - 5mg/kg.",
+      "Le premier jour : 2 fois par jour. Si l'état de l'animal reste toujours préoccupant, 1x/j le 2ème et 3ème jour, sinon passer à VO (2.5 mg/kg). 2 à 3 semaines.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament milbemax = MyMedicament(
-  "Milbemax",
-  "\u200B Cas spécial sans calcul",
-  "VO",
-  "",
-  "Trématodes + cestodes gastro-intestinaux. Molécule: praziquantel. Posologie: 7mg/kg. Poids(g)*7/1000=A. Sachant que dans 1 comprimé, il y a 10 mg.",
-  "1 fois par jour (pendant 1 à 3 jours). A renouveler 2 semaines plus tard.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament gabapentine = MyMedicament(
+      "Gabapentine",
+      "\u200B Cas spécial sans calcul",
+      "VO",
+      "",
+      "11 à 15 mg/kg.",
+      "3 fois par jour.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
+  MyMedicament tonivit = MyMedicament(
+      "Tonivit",
+      "\u200B Cas spécial sans calcul",
+      "VO ou dans l'eau",
+      "",
+      "1 goutte pour 100 gr. Dans l'eau (eau T): 40 gouttes par litre.",
+      "n/a",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament vitaminek1 = MyMedicament(
-  "Vitamine K1",
-  "\u200B Cas spécial sans calcul",
-  "SC ou VO",
-  "",
-  "SC - 5mg/kg.",
-  "Le premier jour : 2 fois par jour. Si l'état de l'animal reste toujours préoccupant, 1x/j le 2ème et 3ème jour, sinon passer à VO (2.5 mg/kg). 2 à 3 semaines.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament petphos = MyMedicament(
+      "Petphos",
+      "\u200B Cas spécial sans calcul",
+      "VO ou sur MAD",
+      "",
+      "1/8 de comprimé pour 250 gr.",
+      "1 fois par jour.",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament gabapentine = MyMedicament(
-  "Gabapentine",
-  "\u200B Cas spécial sans calcul",
-  "VO",
-  "",
-  "11 à 15 mg/kg.",
-  "3 fois par jour.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
+  MyMedicament ultraB = MyMedicament(
+      "Ultra B",
+      "\u200B Cas spécial sans calcul",
+      "IM",
+      "",
+      "3 mg/kg (cf tableau dilution UB pour martinets et petites espèces).",
+      "n/a",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 
-MyMedicament tonivit = MyMedicament(
-  "Tonivit",
-  "\u200B Cas spécial sans calcul",
-  "VO ou dans l'eau",
-  "",
-  "1 goutte pour 100 gr. Dans l'eau (eau T): 40 gouttes par litre.",
-  "n/a",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
-
-MyMedicament petphos = MyMedicament(
-  "Petphos",
-  "\u200B Cas spécial sans calcul",
-  "VO ou sur MAD",
-  "",
-  "1/8 de comprimé pour 250 gr.",
-  "1 fois par jour.",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
-
-MyMedicament ultraB = MyMedicament(
-  "Ultra B",
-  "\u200B Cas spécial sans calcul",
-  "IM",
-  "",
-  "3 mg/kg (cf tableau dilution UB pour martinets et petites espèces).",
-  "n/a",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
-
-MyMedicament antirobe = MyMedicament(
-  "Antirobe / Zodon (comprimé)",
-  "\u200B Cas spécial sans calcul",
-  "VO",
-  "",
-  "Molécule: clindamycine ; Antirobe (25mg ou 75mg); Zodon (88mg sécable); posologie: 150 mg/kg 1 fois par jour (voir tableau).",
-  "n/a",
-  "n/a",
-  "n/a",
-  "n/a",
-  {"n/a":"n/a",
-});
-
+  MyMedicament antirobe = MyMedicament(
+      "Antirobe / Zodon (comprimé)",
+      "\u200B Cas spécial sans calcul",
+      "VO",
+      "",
+      "Molécule: clindamycine ; Antirobe (25mg ou 75mg); Zodon (88mg sécable); posologie: 150 mg/kg 1 fois par jour (voir tableau).",
+      "n/a",
+      "n/a",
+      "n/a",
+      "n/a", {
+    "n/a": "n/a",
+  });
 }
