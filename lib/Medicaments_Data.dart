@@ -124,7 +124,7 @@ void initializeMedicaments() {
       "mg/kg",
       "25",
       "poids*posologie/1000/concentrationSolution", {
-    'Oiseau (50mg/kg)': '50',
+    'Oiseau (150mg/kg)': '150',
   });
 
   MyMedicament bactrim = MyMedicament(
