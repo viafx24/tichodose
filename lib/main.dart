@@ -150,7 +150,7 @@ class _DropdownMenuAppState extends State<DropdownMenuApp> {
                         Divider(
                             color: Colors.black, thickness: 1), // Séparateur
                         Text(
-                          "Tichodose 0.2 / Phase de test (Décembre 2024)",
+                          "Tichodose 0.3 / Phase de test (Octobre 2025)",
                           style: TextStyle(fontSize: 14.0, color: Colors.cyan),
                         ),
                         Divider(
